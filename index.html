@@ -104,7 +104,7 @@
         }
         .copy-trigger:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(var(--p-rgb), 0.4); }
 
-        /* FEATURES SECTION (GRID 4x2) */
+        /* FEATURES SECTION (GRID) */
         section { padding: 150px 0; max-width: 1400px; margin: 0 auto; padding-left: 50px; padding-right: 50px; }
         .grid-header { margin-bottom: 80px; text-align: center; }
         .grid-header h2 { font-size: 4rem; margin-bottom: 10px; }
@@ -113,13 +113,20 @@
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; 
         }
         .f-card {
-            background: var(--card); border: 1px solid var(--border); padding: 40px; border-radius: 40px;
+            background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 30px;
             transition: var(--transition); position: relative; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
         .f-card:hover { border-color: var(--p); transform: translateY(-10px); }
-        .f-card i { font-size: 2.5rem; margin-bottom: 30px; display: block; color: var(--p); }
-        .f-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
-        .f-card p { color: rgba(255,255,255,0.4); font-size: 0.95rem; }
+        .f-card i { font-size: 1.8rem; margin-bottom: 20px; display: block; color: var(--p); }
+        .f-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
+        .f-card p { color: rgba(255,255,255,0.4); font-size: 0.85rem; line-height: 1.4; margin-bottom: 15px; }
+        
+        .mod-link {
+            font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--p); text-decoration: none;
+            display: flex; align-items: center; gap: 8px; font-weight: 700; opacity: 0.7; transition: 0.3s;
+        }
+        .mod-link:hover { opacity: 1; letter-spacing: 1px; }
 
         /* ROADMAP */
         .roadmap-container { position: relative; border-left: 2px solid var(--border); padding-left: 50px; margin-left: 50px; }
@@ -160,9 +167,16 @@
         #toast.active { bottom: 40px; }
 
         /* RESPONSIVE */
-        @media (max-width: 1100px) {
-            .features-mega-grid, .store-grid { grid-template-columns: 1fr 1fr; }
+        @media (max-width: 1200px) {
+            .features-mega-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 900px) {
+            .features-mega-grid { grid-template-columns: repeat(2, 1fr); }
+            .store-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 5rem; }
+        }
+        @media (max-width: 600px) {
+            .features-mega-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -204,87 +218,271 @@
         <div class="grid-header reveal">
             <span style="color: var(--p); font-weight: 800; letter-spacing: 5px;">MODPACK CORE</span>
             <h2>Arsenał Technologii</h2>
-            <p style="color: rgba(255,255,255,0.5); max-width: 800px; margin: 20px auto;">Nasz serwer napędza NeoForge 1.21.1 z unikalną kombinacją modów technicznych, militarnych i eksploracyjnych.</p>
+            <p style="color: rgba(255,255,255,0.5); max-width: 800px; margin: 20px auto;">Kompletna lista modyfikacji napędzających nasz świat.</p>
         </div>
         
         <div class="features-mega-grid">
+            
             <div class="f-card reveal">
-                <div style="position: absolute; top: 15px; right: 20px; font-size: 0.7rem; color: var(--p); font-family: 'JetBrains Mono';">CORE</div>
                 <i class="fa-solid fa-plane-up"></i>
                 <h3>Create Aeronautics</h3>
-                <p>Pełna fizyka lotu. Buduj statki powietrzne, które reagują na masę i pęd. To serce naszej rozgrywki.</p>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-gears"></i>
-                <h3>The Create Ecosystem</h3>
-                <p>Create w wersji 6.0 z dodatkami: <b>Crafts & Additions</b>, <b>Diesel Generators</b> oraz <b>Enchantment Industry</b>.</p>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-person-digging"></i>
-                <h3>Industrial Automation</h3>
-                <p>Automatyczne wydobycie dzięki <b>Ore Excavation</b> oraz zaawansowana obróbka z <b>Slice & Dice</b> i <b>Central Kitchen</b>.</p>
-            </div>
-
-            <div class="f-card reveal" style="border-color: rgba(255, 0, 0, 0.2);">
-                <i class="fa-solid fa-bomb"></i>
-                <h3>Big Cannons & CBC</h3>
-                <p>Projektuj potężną artylerię. <b>CBC Military Supplement</b> dodaje pancerze i uzbrojenie dla Twoich maszyn.</p>
+                <p>Przełomowa fizyka lotu. Buduj własne statki i samoloty.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-aeronautics" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
                 <i class="fa-solid fa-water"></i>
                 <h3>Create Deep Seas</h3>
-                <p>Zanurz się w głębiny. Nowe biomy oceaniczne, ciśnienie wody i modularne łodzie podwodne.</p>
+                <p>Eksploracja dna oceanów i modularne łodzie podwodne.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-deep-seas" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
-                <i class="fa-solid fa-map-location-dot"></i>
-                <h3>Navigation Suite</h3>
-                <p>Pełna kontrola nad terenem dzięki <b>JourneyMap</b> oraz <b>Xaero's Minimap</b>. Nigdy się nie zgubisz.</p>
+                <i class="fa-solid fa-gears"></i>
+                <h3>Create</h3>
+                <p>Podstawa techniczna serwera. Mechanika rotacji i kół zębatych.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
-                <i class="fa-solid fa-coins"></i>
-                <h3>Numismatics & Trading</h3>
-                <p>Własna waluta i <b>Trading Floor</b>. Buduj giełdy towarowe i handluj z innymi korporacjami.</p>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Jade 🔍</h3>
+                <p>Zaawansowany interfejs informacyjny o blokach i bytach.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/jade" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <h3>Sable</h3>
+                <p>Silnik optymalizacji renderowania dla najwyższej płynności.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/sable" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-microphone"></i>
+                <h3>Simple Voice Chat</h3>
+                <p>Komunikacja głosowa zbliżeniowa bezpośrednio w grze.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-map"></i>
+                <h3>Xaero's Minimap</h3>
+                <p>Lekka i precyzyjna minimapa z radarem graczy.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-apple-whole"></i>
+                <h3>AppleSkin</h3>
+                <p>Wizualizacja nasycenia głodu i regeneracji zdrowia.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/appleskin" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Iris Shaders</h3>
+                <p>Obsługa shaderów z niesamowitą wydajnością.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/irisshaders" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-box-archive"></i>
+                <h3>Sophisticated Core</h3>
+                <p>Biblioteka dla zaawansowanych systemów przechowywania.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/sophisticated-core" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-backpack"></i>
+                <h3>Sophisticated Backpacks</h3>
+                <p>Modularne plecaki z ulepszeniami i automatyzacją.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>CBC Military Supplement</h3>
+                <p>Pancerze i osłony dla maszyn bojowych z armatami.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/cbc-military-supplement" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-user-tag"></i>
+                <h3>Chat Heads</h3>
+                <p>Ikony skina obok wiadomości na czacie globalnym.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/chat-heads" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-cubes"></i>
+                <h3>CraterLib</h3>
+                <p>Podstawowa biblioteka techniczna dla modyfikacji.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/craterlib" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-burst"></i>
+                <h3>Create Big Cannons</h3>
+                <p>Budowa potężnej artylerii i pocisków kinetycznych.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-big-cannons" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-plug"></i>
+                <h3>Create Crafts & Additions</h3>
+                <p>Integracja energii elektrycznej z napędami Create.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-crafts-additions" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-chair"></i>
+                <h3>Create Deco</h3>
+                <p>Setki nowych bloków dekoracyjnych w stylu industrialnym.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-deco" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
                 <i class="fa-solid fa-shuttle-space"></i>
-                <h3>Logistics Hub</h3>
-                <p><b>Sophisticated Backpacks</b> oraz <b>Jetpacks</b> pozwolą Ci na szybki transport surowców w najdalsze zakątki mapy.</p>
+                <h3>Create Jetpack</h3>
+                <p>Loty osobiste napędzane sprężonym powietrzem.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-jetpack" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
-                <i class="fa-solid fa-microphone-lines"></i>
-                <h3>Voice Chat & Social</h3>
-                <p><b>Simple Voice Chat</b> (Proximity) oraz <b>Chat Heads</b> dla pełnej immersji podczas rozmów z graczami.</p>
+                <i class="fa-solid fa-bore-hole"></i>
+                <h3>Create Ore Excavation</h3>
+                <p>Wiertła do wydobywania surowców z nieskończonych żył.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-ore-excavation" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <h3>Visual Perfection</h3>
-                <p><b>Iris Shaders</b>, <b>Skin Layers 3D</b> oraz <b>Not Enough Animations</b> sprawiają, że gra wygląda jak z trailerów.</p>
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Create Slice & Dice</h3>
+                <p>Automatyzacja przygotowywania posiłków i krojona.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-slice-and-dice" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-toolbox"></i>
+                <h3>Create Stuff 'N Additions</h3>
+                <p>Nowe narzędzia, pancerze i mechanizmy pomocnicze.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-stuff-additions" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-kitchen-set"></i>
+                <h3>Create: Central Kitchen</h3>
+                <p>Integracja kulinarna Create z Farmer's Delight.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-central-kitchen" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-clone"></i>
+                <h3>Create: Copycats+</h3>
+                <p>Ulepszone bloki kopiujące tekstury innych bloków.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-copycats" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-industry"></i>
+                <h3>Create: Diesel Generators</h3>
+                <p>Silniki spalinowe na paliwa płynne i destylacja.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-diesel-generators" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-dragon"></i>
+                <h3>Create: Dragons Plus</h3>
+                <p>Integracja smoków i mitycznych stworzeń z technologią.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-dragons-plus" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-wand-sparkles"></i>
+                <h3>Create: Enchantment Industry</h3>
+                <p>Automatyzacja zaklinania przedmiotów i płynne XP.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-enchantment-industry" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-fish"></i>
+                <h3>Fishing Bobber Detector</h3>
+                <p>Automatyczne łowienie ryb dzięki systemom Create.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-fishing-bobber-detector" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-wheat-awn"></i>
+                <h3>Create: Integrated Farming</h3>
+                <p>Zintegrowane systemy zaawansowanego rolnictwa.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-integrated-farming" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-coins"></i>
+                <h3>Create: Numismatics</h3>
+                <p>Kompletny system walutowy i fizyczne monety.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-numismatics" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-shop"></i>
+                <h3>Create: Trading Floor</h3>
+                <p>Giełda towarowa i zaawansowany handel z maszynami.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/create-trading-floor" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
                 <i class="fa-solid fa-leaf"></i>
                 <h3>Farmer's Delight</h3>
-                <p>Rozbudowane rolnictwo i <b>Integrated Farming</b>. Zautomatyzuj produkcję żywności dla swojej floty.</p>
+                <p>Najlepszy mod kulinarny z nowymi uprawami i potrawami.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
 
             <div class="f-card reveal">
-                <i class="fa-solid fa-bolt"></i>
-                <h3>Optimization</h3>
-                <p>Dzięki <b>Lithium</b> oraz <b>Sable</b> serwer i klient działają z najwyższą możliwą wydajnością przy 144+ FPS.</p>
+                <i class="fa-solid fa-dragon"></i>
+                <h3>GeckoLib</h3>
+                <p>Silnik animacji dla skomplikowanych modeli 3D.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/geckolib" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
             </div>
-        </div>
 
-        <div class="reveal" style="margin-top: 50px; text-align: center; font-family: 'JetBrains Mono'; font-size: 0.9rem; color: rgba(255,255,255,0.3);">
-            Dodatkowo: Jade, AppleSkin, Mouse Tweaks, GeckoLib, CraterLib, Create: Copycats+, Dragons Plus, Fishing Bobber Detector
-        </div>
+            <div class="f-card reveal">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>JourneyMap</h3>
+                <p>Najbardziej rozbudowana mapa świata i nawigacja.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/journeymap" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Lithium</h3>
+                <p>Kluczowa optymalizacja silnika gry pod NeoForge.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/lithium" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-mouse-pointer"></i>
+                <h3>Mouse Tweaks</h3>
+                <p>Ulepszenia zarządzania ekwipunkiem i sortowania.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/mouse-tweaks" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-person-running"></i>
+                <h3>Not Enough Animations</h3>
+                <p>Płynne animacje jedzenia, picia i korzystania z map.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/not-enough-animations" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-user"></i>
+                <h3>Skin Layers 3D</h3>
+                <p>Trójwymiarowe warstwy skinów dla wszystkich graczy.</p>
+                <a href="https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+            </div>
+            </div>
+
     </section>
 
     <section id="roadmap">
@@ -444,13 +642,10 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                } else {
-                    // Opcjonalnie: usuń komentarz poniżej, jeśli chcesz aby animacja powtarzała się przy każdym przewijaniu
-                    // entry.target.classList.remove('active');
                 }
             });
         }, {
-            threshold: 0.1 // Wyzwól gdy 10% elementu jest widoczne
+            threshold: 0.1
         });
 
         document.querySelectorAll('.reveal').forEach(el => {
