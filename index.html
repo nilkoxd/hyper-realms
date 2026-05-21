@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPER REALMS | Advanced Industrial & Aeronautics Portal</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono:wght@300;700&family=Outfit:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --p: #00f2ff; /* Primary */
+            --p-rgb: 0, 242, 255;
+            --s: #7000ff; /* Secondary */
+            --s-rgb: 112, 0, 255;
+            --bg: #020406;
+            --card: #080a0f;
+            --border: rgba(255, 255, 255, 0.04);
+            --grad: linear-gradient(135deg, var(--p), var(--s));
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-heading: 'Outfit', sans-serif;
+            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* SYSTEM WYSUWANIA (SCROLL REVEAL) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #1a1e26; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--p); }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background: var(--bg); color: #fff; font-family: var(--font-main); 
+            overflow-x: hidden; line-height: 1.7; 
+        }
+
+        canvas#particles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none; opacity: 0.4;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 900; letter-spacing: -2px; }
+        .text-gradient { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* HEADER & NAVIGATION */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 30px 0; transition: var(--transition);
+        }
+        nav.scrolled { background: rgba(2, 4, 6, 0.9); padding: 15px 0; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: space-between; align-items: center; }
+        
+        .nav-logo { font-size: 1.8rem; font-weight: 900; display: flex; align-items: center; gap: 15px; color: #fff; text-decoration: none; }
+        .nav-logo i { color: var(--p); filter: drop-shadow(0 0 10px var(--p)); }
+
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a { 
+            text-decoration: none; color: rgba(255,255,255,0.6); font-weight: 600; font-size: 0.9rem; 
+            text-transform: uppercase; letter-spacing: 1px; transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--p); }
+
+        .nav-actions { display: flex; gap: 15px; align-items: center; }
+        .btn-small { 
+            padding: 10px 25px; border-radius: 8px; border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03); color: #fff; font-weight: 700; cursor: pointer; transition: var(--transition);
+        }
+        .btn-small:hover { border-color: var(--p); color: var(--p); }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; position: relative; overflow: hidden; padding-top: 100px;
+        }
+        .hero-title { font-size: clamp(4rem, 12vw, 9rem); line-height: 0.85; margin-bottom: 20px; }
+        .hero-sub { font-size: 1.5rem; color: rgba(255,255,255,0.5); max-width: 700px; font-weight: 300; margin-bottom: 50px; }
+
+        /* IP MODULE */
+        .ip-module {
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+            padding: 15px 15px 15px 35px; border-radius: 100px; display: inline-flex;
+            align-items: center; gap: 30px; backdrop-filter: blur(10px);
+        }
+        .ip-module .address { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 1.2rem; color: var(--p); letter-spacing: 1px; }
+        .copy-trigger { 
+            background: var(--grad); border: none; padding: 15px 40px; border-radius: 100px; 
+            color: #000; font-weight: 900; cursor: pointer; transition: var(--transition);
+        }
+        .copy-trigger:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(var(--p-rgb), 0.4); }
+
+        /* FEATURES SECTION (GRID 4x2) */
+        section { padding: 150px 0; max-width: 1400px; margin: 0 auto; padding-left: 50px; padding-right: 50px; }
+        .grid-header { margin-bottom: 80px; text-align: center; }
+        .grid-header h2 { font-size: 4rem; margin-bottom: 10px; }
+        
+        .features-mega-grid { 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; 
+        }
+        .f-card {
+            background: var(--card); border: 1px solid var(--border); padding: 40px; border-radius: 40px;
+            transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .f-card:hover { border-color: var(--p); transform: translateY(-10px); }
+        .f-card i { font-size: 2.5rem; margin-bottom: 30px; display: block; color: var(--p); }
+        .f-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
+        .f-card p { color: rgba(255,255,255,0.4); font-size: 0.95rem; }
+
+        /* ROADMAP */
+        .roadmap-container { position: relative; border-left: 2px solid var(--border); padding-left: 50px; margin-left: 50px; }
+        .roadmap-item { margin-bottom: 60px; position: relative; }
+        .roadmap-item::before {
+            content: ''; position: absolute; left: -61px; top: 0; width: 20px; height: 20px;
+            background: var(--bg); border: 4px solid var(--p); border-radius: 50%;
+        }
+        .roadmap-date { color: var(--p); font-family: 'JetBrains Mono'; font-weight: 800; }
+        .roadmap-content h3 { font-size: 1.8rem; margin: 10px 0; }
+
+        /* STORE SECTION */
+        .store-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .package {
+            background: var(--card); border-radius: 50px; padding: 60px 40px; text-align: center;
+            border: 1px solid var(--border); position: relative;
+        }
+        .package.elite { border-color: var(--s); background: linear-gradient(180deg, rgba(112,0,255,0.05) 0%, transparent 100%); }
+        .p-price { font-size: 4rem; font-weight: 900; margin: 20px 0; display: block; }
+        .p-features { list-style: none; margin: 30px 0; text-align: left; }
+        .p-features li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; gap: 10px; }
+        .p-features i { color: var(--p); }
+
+        /* FOOTER */
+        footer { padding: 100px 0; border-top: 1px solid var(--border); background: #010203; text-align: center; }
+        .footer-logo { font-size: 2.5rem; font-weight: 900; margin-bottom: 40px; display: block; text-decoration: none; color: #fff; }
+        .social-big { display: flex; justify-content: center; gap: 30px; margin-bottom: 60px; }
+        .social-big a { 
+            font-size: 2rem; color: rgba(255,255,255,0.2); transition: var(--transition); 
+        }
+        .social-big a:hover { color: var(--p); transform: translateY(-5px); }
+
+        /* TOAST ANIMATION */
+        #toast {
+            position: fixed; bottom: -100px; right: 40px; background: #fff; color: #000;
+            padding: 20px 40px; border-radius: 15px; font-weight: 900; transition: var(--transition); z-index: 2000;
+        }
+        #toast.active { bottom: 40px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .features-mega-grid, .store-grid { grid-template-columns: 1fr 1fr; }
+            .hero-title { font-size: 5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fa-solid fa-atom"></i> HYPER REALMS
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">Technologia</a></li>
+                <li><a href="#wiki">Wiki</a></li>
+                <li><a href="#roadmap">Rozwój</a></li>
+                <li><a href="#store">Sklep</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-small">ZALOGUJ</button>
+                <button class="btn-small" style="background: var(--grad); border: none; color: #000;">DOŁĄCZ</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="animate__animated animate__fadeInUp">
+            <h1 class="hero-title">NEXT-GEN<br><span class="text-gradient">INDUSTRIAL</span></h1>
+            <p class="hero-sub">Największy w Polsce serwer NeoForge 1.21.1 oparty o fizykę lotu, automatyzację i głębinową eksplorację.</p>
+            
+            <div class="ip-module">
+                <span class="address">PLAY.HYPERREALMS.PL</span>
+                <button class="copy-trigger" onclick="copyIP()">KOPIUJ ADRES</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="grid-header reveal">
+            <span style="color: var(--p); font-weight: 800; letter-spacing: 5px;">MODPACK CORE</span>
+            <h2>Arsenał Technologii</h2>
+            <p style="color: rgba(255,255,255,0.5); max-width: 800px; margin: 20px auto;">Nasz serwer napędza NeoForge 1.21.1 z unikalną kombinacją modów technicznych, militarnych i eksploracyjnych.</p>
+        </div>
+        
+        <div class="features-mega-grid">
+            <div class="f-card reveal">
+                <div style="position: absolute; top: 15px; right: 20px; font-size: 0.7rem; color: var(--p); font-family: 'JetBrains Mono';">CORE</div>
+                <i class="fa-solid fa-plane-up"></i>
+                <h3>Create Aeronautics</h3>
+                <p>Pełna fizyka lotu. Buduj statki powietrzne, które reagują na masę i pęd. To serce naszej rozgrywki.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-gears"></i>
+                <h3>The Create Ecosystem</h3>
+                <p>Create w wersji 6.0 z dodatkami: <b>Crafts & Additions</b>, <b>Diesel Generators</b> oraz <b>Enchantment Industry</b>.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-person-digging"></i>
+                <h3>Industrial Automation</h3>
+                <p>Automatyczne wydobycie dzięki <b>Ore Excavation</b> oraz zaawansowana obróbka z <b>Slice & Dice</b> i <b>Central Kitchen</b>.</p>
+            </div>
+
+            <div class="f-card reveal" style="border-color: rgba(255, 0, 0, 0.2);">
+                <i class="fa-solid fa-bomb"></i>
+                <h3>Big Cannons & CBC</h3>
+                <p>Projektuj potężną artylerię. <b>CBC Military Supplement</b> dodaje pancerze i uzbrojenie dla Twoich maszyn.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-water"></i>
+                <h3>Create Deep Seas</h3>
+                <p>Zanurz się w głębiny. Nowe biomy oceaniczne, ciśnienie wody i modularne łodzie podwodne.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>Navigation Suite</h3>
+                <p>Pełna kontrola nad terenem dzięki <b>JourneyMap</b> oraz <b>Xaero's Minimap</b>. Nigdy się nie zgubisz.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-coins"></i>
+                <h3>Numismatics & Trading</h3>
+                <p>Własna waluta i <b>Trading Floor</b>. Buduj giełdy towarowe i handluj z innymi korporacjami.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-shuttle-space"></i>
+                <h3>Logistics Hub</h3>
+                <p><b>Sophisticated Backpacks</b> oraz <b>Jetpacks</b> pozwolą Ci na szybki transport surowców w najdalsze zakątki mapy.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-microphone-lines"></i>
+                <h3>Voice Chat & Social</h3>
+                <p><b>Simple Voice Chat</b> (Proximity) oraz <b>Chat Heads</b> dla pełnej immersji podczas rozmów z graczami.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>Visual Perfection</h3>
+                <p><b>Iris Shaders</b>, <b>Skin Layers 3D</b> oraz <b>Not Enough Animations</b> sprawiają, że gra wygląda jak z trailerów.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>Farmer's Delight</h3>
+                <p>Rozbudowane rolnictwo i <b>Integrated Farming</b>. Zautomatyzuj produkcję żywności dla swojej floty.</p>
+            </div>
+
+            <div class="f-card reveal">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Optimization</h3>
+                <p>Dzięki <b>Lithium</b> oraz <b>Sable</b> serwer i klient działają z najwyższą możliwą wydajnością przy 144+ FPS.</p>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top: 50px; text-align: center; font-family: 'JetBrains Mono'; font-size: 0.9rem; color: rgba(255,255,255,0.3);">
+            Dodatkowo: Jade, AppleSkin, Mouse Tweaks, GeckoLib, CraterLib, Create: Copycats+, Dragons Plus, Fishing Bobber Detector
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <div class="grid-header reveal">
+            <h2>Roadmapa Rozwoju</h2>
+        </div>
+        <div class="roadmap-container">
+            <div class="roadmap-item reveal">
+                <div class="roadmap-date">Q2 2026</div>
+                <div class="roadmap-content">
+                    <h3>Wielkie Otwarcie</h3>
+                    <p>Start głównego świata, wprowadzenie systemu whitelisty i paczki modów na NeoForge.</p>
+                </div>
+            </div>
+            <div class="roadmap-item reveal">
+                <div class="roadmap-date">Q3 2026</div>
+                <div class="roadmap-content">
+                    <h3>Update: Space Race</h3>
+                    <p>Wprowadzenie modułów kosmicznych i możliwości budowy stacji orbitalnych.</p>
+                </div>
+            </div>
+            <div class="roadmap-item reveal">
+                <div class="roadmap-date">Q4 2026</div>
+                <div class="roadmap-content">
+                    <h3>Wojny Korporacyjne</h3>
+                    <p>System rankingowy dla gildii i oficjalne turnieje bitew powietrznych.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="store">
+        <div class="grid-header reveal">
+            <h2>Pakiety Wspierających</h2>
+        </div>
+        <div class="store-grid">
+            <div class="package reveal">
+                <h3>ENGINEER</h3>
+                <span class="p-price">19.99<small>zł</small></span>
+                <ul class="p-features">
+                    <li><i class="fa-solid fa-check"></i> Unikalny Prefix</li>
+                    <li><i class="fa-solid fa-check"></i> Rezerwacja Slotu</li>
+                    <li><i class="fa-solid fa-check"></i> 5x Home</li>
+                </ul>
+                <button class="copy-trigger" style="width: 100%;">WYBIERZ</button>
+            </div>
+            <div class="package elite reveal">
+                <div style="background: var(--s); color:#fff; padding: 5px 20px; border-radius: 10px; display: inline-block; font-size: 0.7rem; font-weight: 800; margin-bottom: 10px;">NAJCZĘŚCIEJ WYBIERANY</div>
+                <h3>OVERLORD</h3>
+                <span class="p-price">49.99<small>zł</small></span>
+                <ul class="p-features">
+                    <li><i class="fa-solid fa-check"></i> Złoty Kolor Nicku</li>
+                    <li><i class="fa-solid fa-check"></i> Prywatny Kanał Discord</li>
+                    <li><i class="fa-solid fa-check"></i> Kit Industrial</li>
+                    <li><i class="fa-solid fa-check"></i> Brak CD na teleporty</li>
+                </ul>
+                <button class="copy-trigger" style="width: 100%;">WYBIERZ</button>
+            </div>
+            <div class="package reveal">
+                <h3>TITAN</h3>
+                <span class="p-price">99.99<small>zł</small></span>
+                <ul class="p-features">
+                    <li><i class="fa-solid fa-check"></i> Wszystkie przywileje</li>
+                    <li><i class="fa-solid fa-check"></i> Unikalna ranga Discord</li>
+                    <li><i class="fa-solid fa-check"></i> Dostęp do Beta-Testów</li>
+                </ul>
+                <button class="copy-trigger" style="width: 100%;">WYBIERZ</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#" class="footer-logo text-gradient">HYPER REALMS</a>
+        <div class="social-big">
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p style="color: rgba(255,255,255,0.3); max-width: 600px; margin: 0 auto;">Serwer Hyper Realms nie jest powiązany z firmą Mojang AB ani Microsoft. Wszelkie wpłaty są darowiznami na utrzymanie infrastruktury technicznej serwera.</p>
+    </footer>
+
+    <div id="toast">IP SKOPIOWANE DO SCHOWKA!</div>
+
+    <script>
+        // Particles System
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x; this.y = y; this.directionX = directionX;
+                this.directionY = directionY; this.size = size; this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = '#00f2ff';
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                this.x += this.directionX; this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 2) - 1;
+                let directionY = (Math.random() * 2) - 1;
+                let color = '#00f2ff';
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = innerWidth; canvas.height = innerHeight; init();
+        });
+
+        init(); animate();
+
+        // UI Logic
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.pageYOffset > 100) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        };
+
+        function copyIP() {
+            navigator.clipboard.writeText("PLAY.HYPERREALMS.PL");
+            const toast = document.getElementById('toast');
+            toast.classList.add('active');
+            setTimeout(() => toast.classList.remove('active'), 3000);
+        }
+
+        // SCROLL REVEAL ENGINE
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    // Opcjonalnie: usuń komentarz poniżej, jeśli chcesz aby animacja powtarzała się przy każdym przewijaniu
+                    // entry.target.classList.remove('active');
+                }
+            });
+        }, {
+            threshold: 0.1 // Wyzwól gdy 10% elementu jest widoczne
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
