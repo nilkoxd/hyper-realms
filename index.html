@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HYPER REALMS | Advanced Industrial & Aeronautics Portal</title>
+    <meta name="description" content="Hyper Realms to landing page dla NeoForge 1.21.1 z FAQ, tutorialami, CTA i statusem serwera HYPERREALMSS.MCSH.IO.">
+    <meta name="author" content="Hyper Realms">
+    <meta name="theme-color" content="#020406">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HYPER REALMS | HYPERREALMSS.MCSH.IO">
+    <meta property="og:description" content="Najprostszy dostęp do FAQ, tutoriali i aktualnego statusu serwera HYPERREALMSS.MCSH.IO.">
+    <meta property="og:url" content="https://hyperrealmss.mcsh.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HYPER REALMS | HYPERREALMSS.MCSH.IO">
+    <meta name="twitter:description" content="FAQ, tutorial i status serwera HYPERREALMSS.MCSH.IO w jednym miejscu.">
+    <link rel="canonical" href="https://hyperrealmss.mcsh.io">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <title>HYPER REALMS | HYPERREALMSS.MCSH.IO</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=JetBrains+Mono:wght@300;700&family=Outfit:wght@100;400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -56,7 +71,7 @@
 
         /* TYPOGRAPHY */
         h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 900; letter-spacing: -2px; }
-        .text-gradient { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient { background: var(--grad); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* HEADER & NAVIGATION */
         nav {
@@ -82,6 +97,459 @@
             background: rgba(255,255,255,0.03); color: #fff; font-weight: 700; cursor: pointer; transition: var(--transition);
         }
         .btn-small:hover { border-color: var(--p); color: var(--p); }
+        .btn-small.btn-primary {
+            background: var(--grad);
+            border: none;
+            color: #000;
+            box-shadow: 0 16px 40px rgba(0, 242, 255, 0.18);
+        }
+        .btn-small.btn-primary:hover {
+            color: #000;
+            transform: translateY(-1px);
+        }
+
+        .cta-shell {
+            border-radius: 32px;
+            border: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.06), rgba(112, 0, 255, 0.05));
+            padding: 28px;
+            display: grid;
+            gap: 22px;
+        }
+        .cta-copy h2 {
+            font-size: 2.4rem;
+            color: #fff;
+            margin: 14px 0 10px;
+        }
+        .cta-copy p {
+            color: rgba(255,255,255,0.74);
+            max-width: 760px;
+            margin: 0;
+        }
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+        .cta-panel {
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            background: rgba(5, 8, 12, 0.9);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cta-panel span {
+            color: var(--p);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.78rem;
+        }
+        .cta-panel h3 {
+            color: #fff;
+            font-size: 1.35rem;
+            line-height: 1.2;
+        }
+        .cta-panel p {
+            color: rgba(255,255,255,0.72);
+            margin: 0;
+        }
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .cta-button {
+            border-radius: 999px;
+            padding: 12px 18px;
+            font-weight: 800;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            cursor: pointer;
+            font-family: var(--font-main);
+        }
+        .cta-button.primary {
+            background: var(--grad);
+            color: #000;
+        }
+        .cta-button.secondary {
+            background: rgba(255,255,255,0.02);
+            color: #fff;
+        }
+        .cta-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.12);
+        }
+
+        .server-status-section {
+            margin-top: 24px;
+            padding: 28px;
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            background: rgba(5, 8, 12, 0.9);
+        }
+        .server-status-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+        .server-status-card {
+            border-radius: 22px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+        }
+        .server-status-card .status-label {
+            display: block;
+            color: rgba(255,255,255,0.62);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.74rem;
+            margin-bottom: 8px;
+        }
+        .server-status-card .status-value {
+            display: block;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        .server-status-card .status-value.is-loading {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .mini-spinner {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 242, 255, 0.18);
+            border-top-color: var(--p);
+            display: inline-block;
+            animation: spin 0.9s linear infinite;
+            box-shadow: 0 0 12px rgba(0, 242, 255, 0.22);
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .server-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(0, 242, 255, 0.12);
+            color: var(--p);
+            font-weight: 800;
+            margin-top: 10px;
+        }
+        .server-status-pill::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #1ddf7f;
+            box-shadow: 0 0 0 5px rgba(29, 223, 127, 0.15);
+        }
+        .server-status-card.is-fallback {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(112, 0, 255, 0.08), rgba(0, 242, 255, 0.06));
+        }
+        .server-status-card.is-fallback::after {
+            content: '';
+            position: absolute;
+            inset: auto -20% -30% auto;
+            width: 120px;
+            height: 120px;
+            border-radius: 999px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.14), transparent 65%);
+            pointer-events: none;
+        }
+        .server-status-fallback-note {
+            margin-top: 12px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .faq-shell {
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            border-radius: 32px;
+            background: linear-gradient(180deg, rgba(0, 242, 255, 0.06), rgba(112, 0, 255, 0.04));
+            border: 1px solid var(--border);
+        }
+        .faq-shell::after {
+            content: '';
+            position: absolute;
+            inset: auto -20% -35% auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 999px;
+            background: radial-gradient(circle, rgba(0,242,255,0.18), transparent 65%);
+            pointer-events: none;
+        }
+        .faq-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .faq-search {
+            flex: 1 1 320px;
+            min-width: 280px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: #fff;
+            padding: 14px 18px;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            outline: none;
+        }
+        .faq-search:focus {
+            border-color: rgba(0,242,255,0.5);
+            box-shadow: 0 0 0 3px rgba(0,242,255,0.12);
+        }
+        .faq-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+        .faq-badge strong { color: var(--p); }
+        .faq-layout {
+            display: grid;
+            grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+        .faq-sidebar {
+            position: sticky;
+            top: 24px;
+            align-self: start;
+            padding: 18px;
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            background: rgba(8, 10, 15, 0.9);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+        }
+        .faq-sidebar-top {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .faq-sidebar-top p {
+            margin: 0 0 8px;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .faq-sidebar-top span {
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        .faq-topic-list {
+            display: grid;
+            gap: 10px;
+        }
+        .faq-topic-button {
+            width: 100%;
+            text-align: left;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255,255,255,0.02);
+            color: #fff;
+            padding: 14px 16px;
+            display: grid;
+            gap: 6px;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+        .faq-topic-button:hover {
+            border-color: rgba(0,242,255,0.35);
+            transform: translateY(-1px);
+        }
+        .faq-topic-button.active {
+            background: rgba(0,242,255,0.1);
+            border-color: rgba(0,242,255,0.45);
+        }
+        .faq-topic-button span {
+            font-weight: 800;
+            font-size: 0.98rem;
+        }
+        .faq-topic-button small {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+            font-size: 0.84rem;
+        }
+        .faq-detail-panel {
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            background: rgba(5, 8, 12, 0.88);
+            padding: 26px;
+            min-height: 540px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .faq-detail-header {
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .faq-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            color: var(--p);
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .faq-detail-header h3 {
+            margin: 14px 0 10px;
+            color: #fff;
+            font-size: 2rem;
+        }
+        .faq-detail-header p {
+            margin: 0;
+            color: rgba(255,255,255,0.74);
+            line-height: 1.75;
+            max-width: 760px;
+        }
+        .faq-step-stack {
+            display: grid;
+            gap: 12px;
+        }
+        .faq-step-card {
+            display: grid;
+            grid-template-columns: 56px minmax(0, 1fr);
+            gap: 14px;
+            padding: 16px;
+            border-radius: 22px;
+            border: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            animation: fadeUp 0.35s ease;
+        }
+        .faq-step-num {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,242,255,0.12);
+            color: var(--p);
+            font-weight: 900;
+            font-family: 'JetBrains Mono';
+        }
+        .faq-step-card h4 {
+            margin: 0 0 6px;
+            color: #fff;
+            font-size: 1.05rem;
+        }
+        .faq-step-card p {
+            margin: 0;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.7;
+        }
+        .faq-step-media {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 180px minmax(0, 1fr);
+            gap: 14px;
+            align-items: center;
+        }
+        .faq-step-thumb {
+            min-height: 150px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(0,242,255,0.12), rgba(112,0,255,0.12));
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+        }
+        .faq-step-thumb-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.04);
+            color: var(--p);
+            font-size: 1.1rem;
+        }
+        .faq-step-thumb strong {
+            color: #fff;
+            font-size: 0.98rem;
+        }
+        .faq-step-thumb small {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+            font-size: 0.82rem;
+        }
+        .faq-step-caption p {
+            margin-bottom: 8px;
+        }
+        .faq-step-caption span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--p);
+            font-size: 0.88rem;
+            font-weight: 800;
+        }
+        .faq-empty {
+            margin-top: 18px;
+            padding: 18px 20px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.02);
+            border: 1px dashed var(--border);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            display: none;
+        }
+        .faq-empty.active { display: block; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .faq-shell { padding: 24px; }
+            .faq-layout { grid-template-columns: 1fr; }
+            .faq-sidebar { position: static; }
+            .faq-step-media { grid-template-columns: 1fr; }
+            .cta-grid { grid-template-columns: 1fr; }
+            .server-status-grid { grid-template-columns: 1fr; }
+            .nav-container { flex-direction: column; gap: 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 18px; }
+            .nav-actions { flex-wrap: wrap; justify-content: center; }
+        }
 
         /* HERO SECTION */
         .hero {
@@ -150,7 +618,6 @@
         .p-features li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; gap: 10px; }
         .p-features i { color: var(--p); }
 
-        /* FOOTER */
         footer { padding: 100px 0; border-top: 1px solid var(--border); background: #010203; text-align: center; }
         .footer-logo { font-size: 2.5rem; font-weight: 900; margin-bottom: 40px; display: block; text-decoration: none; color: #fff; }
         .social-big { display: flex; justify-content: center; gap: 30px; margin-bottom: 60px; }
@@ -159,14 +626,12 @@
         }
         .social-big a:hover { color: var(--p); transform: translateY(-5px); }
 
-        /* TOAST ANIMATION */
         #toast {
             position: fixed; bottom: -100px; right: 40px; background: #fff; color: #000;
             padding: 20px 40px; border-radius: 15px; font-weight: 900; transition: var(--transition); z-index: 2000;
         }
         #toast.active { bottom: 40px; }
 
-        /* RESPONSIVE */
         @media (max-width: 1200px) {
             .features-mega-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -191,13 +656,11 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#about">Technologia</a></li>
-                <li><a href="#wiki">Wiki</a></li>
-                <li><a href="#roadmap">Rozwój</a></li>
-                <li><a href="#store">Sklep</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="btn-small">ZALOGUJ</button>
-                <button class="btn-small" style="background: var(--grad); border: none; color: #000;">DOŁĄCZ</button>
+                <a class="btn-small" href="https://discord.gg/UJG4VCMy83" target="_blank" rel="noreferrer">ZALOGUJ</a>
+                <button class="btn-small btn-primary" type="button" onclick="copyIP()">DOŁĄCZ</button>
             </div>
         </div>
     </nav>
@@ -208,7 +671,7 @@
             <p class="hero-sub">NeoForge 1.21.1</p>
             
             <div class="ip-module">
-                <span class="address">PLAY.HYPERREALMS.PL</span>
+                <span class="address">HYPERREALMSS.MCSH.IO</span>
                 <button class="copy-trigger" onclick="copyIP()">KOPIUJ IP</button>
             </div>
         </div>
@@ -485,77 +948,95 @@
 
     </section>
 
-    <section id="roadmap">
+    <section id="faq">
         <div class="grid-header reveal">
-            <h2>Roadmapa Rozwoju</h2>
+            <span style="color: var(--p); font-weight: 800; letter-spacing: 5px;">KNOWLEDGE CORE</span>
+            <h2>FAQ + tutorial w jednym panelu</h2>
+            <p style="color: rgba(255,255,255,0.5); max-width: 860px; margin: 20px auto;">Najpierw krótka odpowiedź, a następnie pełny poradnik dla tego samego tematu. Kliknij wybrany temat po lewej stronie, aby przejść bezpośrednio do odpowiedniej treści.</p>
         </div>
-        <div class="roadmap-container">
-            <div class="roadmap-item reveal">
-                <div class="roadmap-date">21.05.2026</div>
-                <div class="roadmap-content">
-                    <h3>Wielkie Otwarcie</h3>
-                    <p>Start głównego świata, wprowadzenie systemu whitelisty i paczki modów na NeoForge.</p>
+
+        <div class="faq-shell reveal">
+            <div class="faq-toolbar">
+                <input id="faq-search" class="faq-search" type="text" placeholder="Wyszukaj pytanie, temat lub frazę..." autocomplete="off">
+                <div class="faq-badge"><i class="fa-solid fa-bolt"></i> <span>Pytania: <strong id="faq-count">5</strong></span></div>
+            </div>
+
+            <div class="faq-layout">
+                <aside class="faq-sidebar">
+                    <div class="faq-sidebar-top">
+                        <p>Wybierz temat</p>
+                        <span id="faq-selected-label">Jak oddać działkę?</span>
+                    </div>
+                    <div class="faq-topic-list" id="faq-topic-list">
+                        <button type="button" class="faq-topic-button active" data-topic="oddac-dzialke">
+                            <span>Jak oddać działkę?</span>
+                            <small>Weryfikacja stanu i zgłoszenie w Discordzie</small>
+                        </button>
+                        <button type="button" class="faq-topic-button" data-topic="jak-zrobic-sklep">
+                            <span>Jak zrobić sklep?</span>
+                            <small>Plan działania i bezpieczne uruchomienie</small>
+                        </button>
+                        <button type="button" class="faq-topic-button" data-topic="co-zrobic-gdy-cos-nie-dziala">
+                            <span>Co zrobić, gdy coś nie działa?</span>
+                            <small>Sprawdzenie wersji, logów, zrzutów ekranu i zgłoszenie</small>
+                        </button>
+                        <button type="button" class="faq-topic-button" data-topic="jak-wejsc-w-rytm">
+                            <span>Jak wejść w rytm pracy?</span>
+                            <small>Plan pracy i pierwszy krok realizacji</small>
+                        </button>
+                        <button type="button" class="faq-topic-button" data-topic="kiedy-uzywac-discorda">
+                            <span>Kiedy używać Discorda zamiast czatu?</span>
+                            <small>Kiedy korzystać z Discorda, a kiedy sprawdzić informacje w innym miejscu</small>
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="faq-detail-panel">
+                    <div class="faq-detail-header">
+                        <span class="faq-kicker">Podstrona tutorialowa</span>
+                        <h3 id="faq-detail-title">Jak oddać działkę?</h3>
+                        <p id="faq-detail-summary">Najpierw upewnij się, że działka naprawdę należy do Ciebie. Jeśli zamierzasz ją zwolnić, zgłoś to w Discordzie z lokalizacją i krótkim opisem, aby administrator mógł potwierdzić stan.</p>
+                    </div>
+
+                    <div id="faq-detail-steps" class="faq-step-stack"></div>
                 </div>
             </div>
-            <div class="roadmap-item reveal">
-                <div class="roadmap-date">Q3 2026</div>
-                <div class="roadmap-content">
-                    <h3>Update: Space Race</h3>
-                    <p>Wprowadzenie modułów kosmicznych i możliwości budowy stacji orbitalnych.</p>
-                </div>
+
+            <div class="faq-empty" id="faq-empty">Nie znaleziono wyników dla podanego zapytania. Sprawdź pisownię lub wybierz inny temat.</div>
+        </div>
+
+
+        <div class="server-status-section reveal">
+            <div class="grid-header" style="text-align: left; margin-bottom: 28px;">
+                <span style="color: var(--p); font-weight: 800; letter-spacing: 5px;">STATUS SERWERA</span>
+                <h2 style="font-size: 2.4rem; margin-top: 10px;">Aktualny stan serwera w jednym miejscu</h2>
+                <p style="color: rgba(255,255,255,0.58); max-width: 760px; margin: 10px 0 0;">Dane są aktualizowane na żywo i odświeżane automatycznie, aby zapewnić aktualny stan serwera przed rozpoczęciem rozgrywki.</p>
             </div>
-            <div class="roadmap-item reveal">
-                <div class="roadmap-date">Q4 2026</div>
-                <div class="roadmap-content">
-                    <h3>Wojny Korporacyjne</h3>
-                    <p>System rankingowy dla gildii i oficjalne turnieje bitew powietrznych.</p>
+            <div class="server-status-grid">
+                <div class="server-status-card">
+                    <span class="status-label">Status</span>
+                    <span class="status-value is-loading" id="server-status-online"><span class="mini-spinner" aria-hidden="true"></span>SPRAWDZAM...</span>
+                    <span class="server-status-pill" id="server-status-pill">Sprawdzanie statusu...</span>
+                </div>
+                <div class="server-status-card">
+                    <span class="status-label">Gracze</span>
+                    <span class="status-value" id="server-status-players">—</span>
+                    <span class="status-label" style="margin-top: 12px;">aktywna obecność</span>
+                </div>
+                <div class="server-status-card">
+                    <span class="status-label">Wersja</span>
+                    <span class="status-value" id="server-status-version">—</span>
+                    <span class="status-label" style="margin-top: 12px;">zgodna z klientem</span>
+                </div>
+                <div class="server-status-card">
+                    <span class="status-label">Ostatnia aktualizacja</span>
+                    <span class="status-value" id="server-status-uptime">—</span>
+                    <span class="status-label" style="margin-top: 12px;">odświeżanie automatyczne</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="store">
-        <div class="grid-header reveal">
-            <h2>Pakiety Wspierających</h2>
-        </div>
-        <div class="store-grid">
-            <div class="package reveal">
-                <h3>ENGINEER</h3>
-                <span class="p-price">-8<small>zł</small></span>
-                <ul class="p-features">
-                    <li><i class="fa-solid fa-check"></i> Unikalny Prefix</li>
-                    <li><i class="fa-solid fa-check"></i> Rezerwacja Slotu</li>
-                    <li><i class="fa-solid fa-check"></i> 5x Home</li>
-                </ul>
-                <button class="copy-trigger" style="width: 100%;">WYBIERZ</button>
-            </div>
-            <div class="package elite reveal">
-                <div style="background: var(--s); color:#fff; padding: 5px 20px; border-radius: 10px; display: inline-block; font-size: 0.7rem; font-weight: 800; margin-bottom: 10px;">NAJCZĘŚCIEJ WYBIERANY</div>
-                <h3>OVERLORD</h3>
-                <span class="p-price">-00.00<small>zł</small></span>
-                <ul class="p-features">
-                    <li><i class="fa-solid fa-check"></i> Złoty Kolor Nicku</li>
-                    <li><i class="fa-solid fa-check"></i> Prywatny Kanał Discord</li>
-                    <li><i class="fa-solid fa-check"></i> Kit Industrial</li>
-                    <li><i class="fa-solid fa-check"></i> Brak CD na teleporty</li>
-                </ul>
-                <button class="copy-trigger" style="width: 100%;">WYBIERZ</button>
-            </div>
-            <div class="package reveal">
-                <h3>TITAN</h3>
-                <span class="p-price">00.00<small>zł</small></span>
-                <ul class="p-features">
-                    <li><i class="fa-solid fa-check"></i> Wszystkie przywileje</li>
-                    <li><i class="fa-solid fa-check"></i> Unikalna ranga Discord</li>
-                    <li><i class="fa-solid fa-check"></i> Dostęp do Beta-Testów</li>
-                </ul>
-                <button class="copy-trigger" style="width: 100%;">WYBIERZ</button>
-            </div>
-        </div>
-    </section>
-    
-
-    
     <footer>
         <a href="#" class="footer-logo text-gradient">HYPER REALMS</a>
         <div class="social-big">
@@ -633,11 +1114,230 @@
         };
 
         function copyIP() {
-            navigator.clipboard.writeText("PLAY.HYPERREALMS.PL");
-            const toast = document.getElementById('toast');
-            toast.classList.add('active');
-            setTimeout(() => toast.classList.remove('active'), 3000);
+            navigator.clipboard.writeText("HYPERREALMSS.MCSH.IO").then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('active');
+                setTimeout(() => toast.classList.remove('active'), 3000);
+            }).catch(() => {
+                const toast = document.getElementById('toast');
+                toast.textContent = 'NIE UDAŁO SIĘ SKOPIOWAĆ IP';
+                toast.classList.add('active');
+                setTimeout(() => {
+                    toast.classList.remove('active');
+                    toast.textContent = 'IP SKOPIOWANE DO SCHOWKA!';
+                }, 3000);
+            });
         }
+
+        const faqSearch = document.getElementById('faq-search');
+        const faqEmpty = document.getElementById('faq-empty');
+        const faqCount = document.getElementById('faq-count');
+        const faqTopicList = document.getElementById('faq-topic-list');
+        const faqSelectedLabel = document.getElementById('faq-selected-label');
+        const faqDetailTitle = document.getElementById('faq-detail-title');
+        const faqDetailSummary = document.getElementById('faq-detail-summary');
+        const faqDetailSteps = document.getElementById('faq-detail-steps');
+
+        const serverStatusNodes = {
+            online: document.getElementById('server-status-online'),
+            players: document.getElementById('server-status-players'),
+            version: document.getElementById('server-status-version'),
+            uptime: document.getElementById('server-status-uptime'),
+            pill: document.getElementById('server-status-pill')
+        };
+
+        async function loadServerStatus() {
+            const fallback = {
+                online: 'NIE WIADOMO',
+                players: 'brak danych',
+                version: 'weryfikacja...',
+                uptime: 'odświeżenie za chwilę'
+            };
+
+            if (!serverStatusNodes.online) return;
+
+            serverStatusNodes.online.classList.add('is-loading');
+            serverStatusNodes.online.innerHTML = '<span class="mini-spinner" aria-hidden="true"></span>SPRAWDZAM...';
+            serverStatusNodes.players.textContent = '—';
+            serverStatusNodes.version.textContent = '—';
+            serverStatusNodes.uptime.textContent = '—';
+            serverStatusNodes.pill.textContent = 'Sprawdzanie statusu...';
+
+            const applyFallback = () => {
+                serverStatusNodes.online.classList.remove('is-loading');
+                serverStatusNodes.online.textContent = fallback.online;
+                serverStatusNodes.players.textContent = fallback.players;
+                serverStatusNodes.version.textContent = fallback.version;
+                serverStatusNodes.uptime.textContent = fallback.uptime;
+                serverStatusNodes.pill.textContent = 'Status tymczasowo niedostępny — odświeżamy dane automatycznie';
+
+                const cards = document.querySelectorAll('.server-status-card');
+                cards.forEach(card => card.classList.add('is-fallback'));
+            };
+
+            try {
+                const response = await fetch('https://api.mcsrvstat.us/3/hyperrealmss.mcsh.io');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+
+                const apiFailed = Boolean(data?.error && !data?.online);
+                if (apiFailed) throw new Error('Status API returned an error payload');
+
+                const online = Boolean(data.online);
+                const playersOnline = typeof data.players?.online === 'number' ? String(data.players.online) : fallback.players;
+                const playersMax = typeof data.players?.max === 'number' ? `/${data.players.max}` : '';
+                const resolvedVersion = typeof data.version === 'string' && data.version.trim() !== '' ? data.version : fallback.version;
+                const updatedAt = new Intl.DateTimeFormat('pl-PL', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }).format(new Date());
+
+                const cards = document.querySelectorAll('.server-status-card');
+                cards.forEach(card => card.classList.remove('is-fallback'));
+
+                serverStatusNodes.online.classList.remove('is-loading');
+                serverStatusNodes.online.textContent = online ? 'ONLINE' : 'OFFLINE';
+                serverStatusNodes.players.textContent = `${playersOnline}${playersMax}`;
+                serverStatusNodes.version.textContent = resolvedVersion;
+                serverStatusNodes.uptime.textContent = updatedAt;
+                serverStatusNodes.pill.textContent = online ? 'Serwer aktywny' : 'Serwer niedostępny';
+            } catch (error) {
+                applyFallback();
+            }
+        }
+
+        loadServerStatus();
+        setInterval(loadServerStatus, 30000);
+
+        const faqTopics = {
+            'oddac-dzialke': {
+                title: 'Jak oddać działkę?',
+                summary: 'Najpierw upewnij się, że działka naprawdę należy do Ciebie. Jeśli zamierzasz ją zwolnić, zgłoś to w Discordzie z lokalizacją i krótkim opisem, aby administrator mógł potwierdzić stan.',
+                tagline: 'Weryfikacja stanu i zgłoszenie w Discordzie',
+                steps: [
+                    { title: 'Sprawdź, czy działka rzeczywiście należy do Ciebie', body: 'Upewnij się, że masz pełną kontrolę nad działką i że nic nie jest w trakcie innego procesu.', icon: 'fa-map-location-dot', visualTitle: 'Screenshot: stan działki', visualHint: 'Miejsce na zrzut pokazujący szczegóły działki', visualText: 'Utwórz zrzut ekranu lub zanotuj nazwę i lokalizację, aby administrator mógł szybko zweryfikować sprawę.', visualNote: 'Warto dodać krótki opis i powód oddania działki.' },
+                    { title: 'Zgłoś temat w Discordzie', body: 'Podaj nazwę działki, lokalizację i krótki opis tego, czego potrzebujesz.', icon: 'fa-comments', visualTitle: 'Screenshot: zgłoszenie w Discordzie', visualHint: 'Przykładowy układ wiadomości pomocniczej', visualText: 'Napisz klarowną wiadomość z podstawowymi danymi i zakładką, która ma być zwolniona.', visualNote: 'Im mniej domysłów, tym szybciej admin przygotuje odpowiedź.' },
+                    { title: 'Poczekaj na potwierdzenie', body: 'Nie zmieniaj niczego na działce, dopóki administrator nie potwierdzi statusu.', icon: 'fa-hourglass-half', visualTitle: 'Screenshot: potwierdzenie stanu', visualHint: 'Miejsce na podsumowanie decyzji admina', visualText: 'Po potwierdzeniu możesz przejść do kolejnego kroku albo od razu opisać najnowszy status działki.', visualNote: 'Jeśli coś się zmienia, wróć do Discorda i dopisz nową informację.' }
+                ]
+            },
+            'jak-zrobic-sklep': {
+                title: 'Jak zrobić sklep?',
+                summary: 'Sklep warto zakładać dopiero wtedy, gdy masz konkretny plan: co sprzedajesz, jaka ma być rola tej przestrzeni i czy nie koliduje z innymi projektami.',
+                tagline: 'Plan działania i bezpieczne uruchomienie',
+                steps: [
+                    { title: 'Zdefiniuj cel sklepu', body: 'Określ, co będzie sprzedawane, dla kogo i jak ma wyglądać rozgrywka.', icon: 'fa-bullseye', visualTitle: 'Screenshot: koncepcja sklepu', visualHint: 'Miejsce na szkic lub opis oferty', visualText: 'Opisz, co gracz ma otrzymać w pierwszym kroku oraz jak sklep ma wspierać społeczność.', visualNote: 'Dobrze mieć przynajmniej jeden konkretny cel na start.' },
+                    { title: 'Uzgodnij to z zespołem', body: 'Sprawdź, czy nie ma już podobnego projektu lub konfliktu z istniejącymi ofertami.', icon: 'fa-users-line', visualTitle: 'Screenshot: rozmowa zespołowa', visualHint: 'Przykład krótkiej konsultacji przed uruchomieniem', visualText: 'Wspólne ustalenie zakresu sprawi, że sklep będzie spójny i łatwy do utrzymania.', visualNote: 'Warto od razu przypisać odpowiedzialności i kontakt do moderacji.' },
+                    { title: 'Uruchom i opisz działanie', body: 'Stwórz prostą strukturę, komunikat i miejsce na pierwszy kontakt z graczami.', icon: 'fa-store', visualTitle: 'Screenshot: pierwszy wpis sklepu', visualHint: 'Miejsce na przykład etykiety i opisu', visualText: 'Dodaj krótki opis, podstawowe informacje i wiadomość, która wyjaśnia, co gracz może zrobić dalej.', visualNote: 'Pierwsze wrażenie jest ważne — nie zostawiaj niejasności.' }
+                ]
+            },
+            'co-zrobic-gdy-cos-nie-dziala': {
+                title: 'Co zrobić, gdy coś nie działa?',
+                summary: 'Sprawdź najpierw wersję, status serwera i logi. Jeśli problem się powtarza, wrzuć do Discorda dokładny opis, zrzut ekranu i informację, kiedy problem wystąpił.',
+                tagline: 'Sprawdzenie wersji, logów, zrzutów ekranu i zgłoszenie',
+                steps: [
+                    { title: 'Sprawdź wersję i status serwera', body: 'Upewnij się, czy problem nie wynika z błędnej wersji lub krótkiego przestoju.', icon: 'fa-circle-info', visualTitle: 'Screenshot: ustawienia i status', visualHint: 'Miejsce na zrzut wersji i statusu', visualText: 'Sprawdź, czy klient i serwer są na tej samej wersji oraz czy serwer nie ma aktualnego przestoju.', visualNote: 'To często eliminuje większość problemów przed kontaktem z Discordem.' },
+                    { title: 'Zbierz dane', body: 'Zapisz logi, zrzut ekranu oraz czas, kiedy problem się pojawił.', icon: 'fa-file-lines', visualTitle: 'Screenshot: logi i błąd', visualHint: 'Przykład informacji, które warto dołączyć', visualText: 'Wrzucaj konkretne informacje: błąd, czas, nazwa świata, kroki odtworzenia.', visualNote: 'Najlepsze zgłoszenie zawiera przynajmniej jeden zrzut lub log.' },
+                    { title: 'Zgłoś to w Discordzie', body: 'Im więcej szczegółów, tym szybciej administrator znajdzie przyczynę.', icon: 'fa-bug', visualTitle: 'Screenshot: zgłoszenie problemu', visualHint: 'Miejsce na przykład gotowego opisu', visualText: 'Podaj dokładny opis problemu i wklej link do zrzutu lub logów, aby administrator mógł działać od razu.', visualNote: 'Pamiętaj, że krótkie i konkretne zgłoszenie zwiększa szanse na szybkie rozwiązanie.' }
+                ]
+            },
+            'jak-wejsc-w-rytm': {
+                title: 'Jak wejść w rytm pracy?',
+                summary: 'Najskuteczniejszy start to szybkie zapoznanie się z aktualnym projektem oraz jasny cel na jedną sesję pracy.',
+                tagline: 'Plan pracy i pierwszy krok realizacji',
+                steps: [
+                    { title: 'Dołącz do aktualnego projektu', body: 'Sprawdź, co już jest gotowe i gdzie możesz się od razu przyłączyć.', icon: 'fa-person-walking', visualTitle: 'Screenshot: aktywny projekt', visualHint: 'Miejsce na podgląd aktualnego zadania', visualText: 'Sprawdź, gdzie możesz wnieść realną wartość i jakie zadania są już zaplanowane.', visualNote: 'Dobry start to wejście tam, gdzie jest już podstawowa struktura.' },
+                    { title: 'Ustal jeden cel na sesję', body: 'Nie rozpraszaj się między kilkoma zadaniami naraz.', icon: 'fa-list-check', visualTitle: 'Screenshot: lista celów', visualHint: 'Miejsce na prostą listę zadań', visualText: 'Wybierz jeden konkret, który da się skończyć w trakcie jednej sesji.', visualNote: 'To pomaga utrzymać tempo i widzieć postęp.' },
+                    { title: 'Dokonaj krótkiego podsumowania', body: 'Zapisz, co zostało zrobione i co trzeba dokończyć następnym razem.', icon: 'fa-clipboard-check', visualTitle: 'Screenshot: podsumowanie sesji', visualHint: 'Przykład krótkiego notatnika', visualText: 'Notatka z wynikiem sesji daje jasny punkt startu na kolejny dzień.', visualNote: 'Minimalna forma podsumowania wystarczy, by nic nie zostało w tyle.' }
+                ]
+            },
+            'kiedy-uzywac-discorda': {
+                title: 'Kiedy używać Discorda zamiast czatu?',
+                summary: 'Czaty są dobre do krótkich, ogólnych informacji, natomiast Discord sprawdza się przy planowaniu, decyzjach i rozwiązywaniu problemów na bieżąco.',
+                tagline: 'Kiedy korzystać z Discorda, a kiedy sprawdzić informacje w innym miejscu',
+                steps: [
+                    { title: 'Użyj czatu dla krótkich informacji', body: 'Dobre do ogólnych ogłoszeń i szybkich przypomnień.', icon: 'fa-comment-dots', visualTitle: 'Screenshot: krótkie ogłoszenie', visualHint: 'Miejsce na przykład wiadomości z informacją', visualText: 'Czat sprawdza się do krótkich aktualizacji, które nie wymagają długiej dyskusji.', visualNote: 'Czat to dobre miejsce do krótkich przypomnień i ogólnych informacji.' },
+                    { title: 'Użyj Discorda do decyzji i detali', body: 'Idealne przy technicznych rzeczach, planowaniu i poważniejszych sprawach.', icon: 'fa-headset', visualTitle: 'Screenshot: rozmowa tematyczna', visualHint: 'Miejsce na przykład wątku z danymi', visualText: 'Discord daje miejsce na kontekst, listy, zdjęcia i ogólną koordynację.', visualNote: 'Tam warto przenosić wszystko, co wymaga rozmowy i decyzji.' },
+                    { title: 'Zachowaj jedno miejsce dla informacji', body: 'Najlepiej trzymać wszystkie oficjalne decyzje tam, gdzie są łatwo dostępne.', icon: 'fa-folder-open', visualTitle: 'Screenshot: archiwum wiadomości', visualHint: 'Przykład uporządkowanego tematu', visualText: 'Utrzymywanie jednego miejsca dla informacji ogranicza chaos i pomaga wracać do ważnych decyzji.', visualNote: 'Jeśli coś ma być oficjalne, trzymaj to w przewidywalnym miejscu.' }
+                ]
+            }
+        };
+
+        let activeTopic = 'oddac-dzialke';
+
+        function renderSteps(topic) {
+            faqDetailSteps.innerHTML = topic.steps.map((step, index) => `
+                <article class="faq-step-card">
+                    <span class="faq-step-num">${String(index + 1).padStart(2, '0')}</span>
+                    <div>
+                        <h4>${step.title}</h4>
+                        <p>${step.body}</p>
+                        <div class="faq-step-media">
+                            <div class="faq-step-thumb">
+                                <span class="faq-step-thumb-icon"><i class="fa-solid ${step.icon}"></i></span>
+                                <strong>${step.visualTitle}</strong>
+                                <small>${step.visualHint}</small>
+                            </div>
+                            <div class="faq-step-caption">
+                                <p>${step.visualText}</p>
+                                <span><i class="fa-solid fa-circle-info"></i> ${step.visualNote}</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderDetail(topicId) {
+            const topic = faqTopics[topicId];
+            if (!topic) return;
+            activeTopic = topicId;
+            faqSelectedLabel.textContent = topic.title;
+            faqDetailTitle.textContent = topic.title;
+            faqDetailSummary.textContent = topic.summary;
+            renderSteps(topic);
+            document.querySelectorAll('.faq-topic-button').forEach((button) => {
+                button.classList.toggle('active', button.dataset.topic === topicId);
+            });
+        }
+
+        function filterTopics() {
+            const term = faqSearch.value.trim().toLowerCase();
+            const filteredIds = Object.keys(faqTopics).filter((id) => {
+                const topic = faqTopics[id];
+                const haystack = `${topic.title} ${topic.summary} ${topic.tagline} ${topic.steps.map((step) => `${step.title} ${step.body}`).join(' ')}`.toLowerCase();
+                return term === '' || haystack.includes(term);
+            });
+
+            const buttons = Array.from(document.querySelectorAll('.faq-topic-button'));
+            buttons.forEach((button) => {
+                const shouldShow = filteredIds.includes(button.dataset.topic);
+                button.style.display = shouldShow ? 'grid' : 'none';
+            });
+
+            faqCount.textContent = filteredIds.length;
+            faqEmpty.classList.toggle('active', filteredIds.length === 0);
+
+            if (filteredIds.length === 0) {
+                faqSelectedLabel.textContent = 'Brak wyników';
+                return;
+            }
+
+            if (!filteredIds.includes(activeTopic)) {
+                activeTopic = filteredIds[0];
+            }
+
+            renderDetail(activeTopic);
+        }
+
+        faqTopicList.querySelectorAll('.faq-topic-button').forEach((button) => {
+            button.addEventListener('click', () => {
+                renderDetail(button.dataset.topic);
+            });
+        });
+
+        faqSearch.addEventListener('input', filterTopics);
+        filterTopics();
 
         // SCROLL REVEAL ENGINE
         const revealObserver = new IntersectionObserver((entries) => {
