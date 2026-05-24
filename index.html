@@ -463,9 +463,16 @@
             font-family: 'JetBrains Mono';
         }
         .faq-step-card h4 {
+            /* Twoje stare ustawienia */
             margin: 0 0 6px;
             color: #fff;
             font-size: 1.05rem;
+
+            /* Nowe poprawki na brak spacji */
+            letter-spacing: normal !important; 
+            word-spacing: 2px;
+            display: inline-block;
+            width: 100%;
         }
         .faq-step-card p {
             margin: 0;
@@ -950,7 +957,7 @@
     <section id="faq">
         <div class="grid-header reveal">
             <span style="color: var(--p); font-weight: 800; letter-spacing: 5px;">KNOWLEDGE CORE</span>
-            <h2>FAQ + tutorial w jednym panelu</h2>
+            <h2>FAQ</h2>
             <p style="color: rgba(255,255,255,0.5); max-width: 860px; margin: 20px auto;">Najpierw krótka odpowiedź, a następnie pełny poradnik dla tego samego tematu. Kliknij wybrany temat po lewej stronie, aby przejść bezpośrednio do odpowiedniej treści.</p>
         </div>
 
@@ -964,12 +971,12 @@
                 <aside class="faq-sidebar">
                     <div class="faq-sidebar-top">
                         <p>Wybierz temat</p>
-                        <span id="faq-selected-label">Jak oddać działkę?</span>
+                        <span id="faq-selected-label">Wybrany temat</span>
                     </div>
                     <div class="faq-topic-list" id="faq-topic-list">
-                        <button type="button" class="faq-topic-button active" data-topic="oddac-dzialke">
-                            <span>Jak oddać działkę?</span>
-                            <small>Weryfikacja stanu i zgłoszenie w Discordzie</small>
+                        <button type="button" class="faq-topic-button active" data-topic="jak-pobrac-mody">
+                            <span>Jak pobrać mody?</span>
+                            <small>Instalacja paczki i konfiguracja launchera</small>
                         </button>
                         <button type="button" class="faq-topic-button" data-topic="jak-zrobic-sklep">
                             <span>Jak zrobić sklep?</span>
@@ -1210,14 +1217,38 @@
         setInterval(loadServerStatus, 30000);
 
         const faqTopics = {
-            'oddac-dzialke': {
-                title: 'Jak oddać działkę?',
-                summary: 'Najpierw upewnij się, że działka naprawdę należy do Ciebie. Jeśli zamierzasz ją zwolnić, zgłoś to w Discordzie z lokalizacją i krótkim opisem, aby administrator mógł potwierdzić stan.',
-                tagline: 'Weryfikacja stanu i zgłoszenie w Discordzie',
+'jak-pobrac-mody': {
+                title: 'Jak pobrać mody?',
+                summary: 'Nasz serwer korzysta z systemu importu CurseForge. To najszybsza metoda, która automatycznie zainstaluje wszystkie potrzebne mody i silnik NeoForge.',
+                tagline: 'Instalacja przez launcher CurseForge (kod importu)',
                 steps: [
-                    { title: 'Sprawdź, czy działka rzeczywiście należy do Ciebie', body: 'Upewnij się, że masz pełną kontrolę nad działką i że nic nie jest w trakcie innego procesu.', icon: 'fa-map-location-dot', visualTitle: 'Screenshot: stan działki', visualHint: 'Miejsce na zrzut pokazujący szczegóły działki', visualText: 'Utwórz zrzut ekranu lub zanotuj nazwę i lokalizację, aby administrator mógł szybko zweryfikować sprawę.', visualNote: 'Warto dodać krótki opis i powód oddania działki.' },
-                    { title: 'Zgłoś temat w Discordzie', body: 'Podaj nazwę działki, lokalizację i krótki opis tego, czego potrzebujesz.', icon: 'fa-comments', visualTitle: 'Screenshot: zgłoszenie w Discordzie', visualHint: 'Przykładowy układ wiadomości pomocniczej', visualText: 'Napisz klarowną wiadomość z podstawowymi danymi i zakładką, która ma być zwolniona.', visualNote: 'Im mniej domysłów, tym szybciej admin przygotuje odpowiedź.' },
-                    { title: 'Poczekaj na potwierdzenie', body: 'Nie zmieniaj niczego na działce, dopóki administrator nie potwierdzi statusu.', icon: 'fa-hourglass-half', visualTitle: 'Screenshot: potwierdzenie stanu', visualHint: 'Miejsce na podsumowanie decyzji admina', visualText: 'Po potwierdzeniu możesz przejść do kolejnego kroku albo od razu opisać najnowszy status działki.', visualNote: 'Jeśli coś się zmienia, wróć do Discorda i dopisz nową informację.' }
+                    { 
+                        title: 'Pobierz i zainstaluj CurseForge', 
+                        body: 'Pobierz oficjalny launcher ze strony curseforge.com. Zainstaluj go i zaloguj się na swoje konto Minecraft.', 
+                        icon: 'fa-download', 
+                        visualTitle: 'Krok 1: Instalacja', 
+                        visualHint: 'Strona: curseforge.com', 
+                        visualText: 'Upewnij się, że wybierasz wersję odpowiednią dla swojego systemu operacyjnego.', 
+                        visualNote: 'Launcher jest bezpieczny i używany przez miliony graczy.' 
+                    },
+                    { 
+                        title: 'Wybierz Minecraft i opcję Import', 
+                        body: 'W aplikacji CurseForge wybierz grę Minecraft z listy, przejdź do zakładki "My Modpacks", a następnie kliknij przycisk "Import" w górnym menu.', 
+                        icon: 'fa-file-import', 
+                        visualTitle: 'Krok 2: Sekcja modyfikacji', 
+                        visualHint: 'Zakładka: My Modpacks -> Import', 
+                        visualText: 'To pozwoli Ci dodać naszą paczkę bez ręcznego przenoszenia plików do folderów.', 
+                        visualNote: 'Wszystko stanie się automatycznie.' 
+                    },
+                    { 
+                        title: 'Użyj kodu do importu paczki', 
+                        body: 'Wybierz opcję importu za pomocą kodu i wklej nasz unikalny kod: 8z4UloPb. Zatwierdź i poczekaj, aż paczka się pobierze.', 
+                        icon: 'fa-key', 
+                        visualTitle: 'Krok 3: Wpisz kod', 
+                        visualHint: 'Kod: 8z4UloPb', 
+                        visualText: 'Po zakończeniu pobierania wystarczy kliknąć przycisk "Play" przy nowej paczce.', 
+                        visualNote: 'Jeśli kod nie działa, sprawdź czy nie skopiowałeś dodatkowej spacji.' 
+                    }
                 ]
             },
             'jak-zrobic-sklep': {
