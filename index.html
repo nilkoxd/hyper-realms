@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+usun cala sekcje faq <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -273,281 +273,7 @@
             line-height: 1.6;
         }
 
-        .faq-shell {
-            position: relative;
-            overflow: hidden;
-            padding: 30px;
-            border-radius: 32px;
-            background: linear-gradient(180deg, rgba(0, 242, 255, 0.06), rgba(112, 0, 255, 0.04));
-            border: 1px solid var(--border);
-        }
-        .faq-shell::after {
-            content: '';
-            position: absolute;
-            inset: auto -20% -35% auto;
-            width: 220px;
-            height: 220px;
-            border-radius: 999px;
-            background: radial-gradient(circle, rgba(0,242,255,0.18), transparent 65%);
-            pointer-events: none;
-        }
-        .faq-toolbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
-        .faq-search {
-            flex: 1 1 320px;
-            min-width: 280px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            color: #fff;
-            padding: 14px 18px;
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            outline: none;
-        }
-        .faq-search:focus {
-            border-color: rgba(0,242,255,0.5);
-            box-shadow: 0 0 0 3px rgba(0,242,255,0.12);
-        }
-        .faq-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 16px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            color: rgba(255,255,255,0.8);
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-        .faq-badge strong { color: var(--p); }
-        .faq-layout {
-            display: grid;
-            grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
-            gap: 24px;
-            align-items: start;
-        }
-        .faq-sidebar {
-            position: sticky;
-            top: 24px;
-            align-self: start;
-            padding: 18px;
-            border-radius: 28px;
-            border: 1px solid var(--border);
-            background: rgba(8, 10, 15, 0.9);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
-        }
-        .faq-sidebar-top {
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-        .faq-sidebar-top p {
-            margin: 0 0 8px;
-            color: rgba(255,255,255,0.55);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .faq-sidebar-top span {
-            color: #fff;
-            font-weight: 800;
-            font-size: 1rem;
-        }
-        .faq-topic-list {
-            display: grid;
-            gap: 10px;
-        }
-        .faq-topic-button {
-            width: 100%;
-            text-align: left;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: rgba(255,255,255,0.02);
-            color: #fff;
-            padding: 14px 16px;
-            display: grid;
-            gap: 6px;
-            cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-        }
-        .faq-topic-button:hover {
-            border-color: rgba(0,242,255,0.35);
-            transform: translateY(-1px);
-        }
-        .faq-topic-button.active {
-            background: rgba(0,242,255,0.1);
-            border-color: rgba(0,242,255,0.45);
-        }
-        .faq-topic-button span {
-            font-weight: 800;
-            font-size: 0.98rem;
-        }
-        .faq-topic-button small {
-            color: rgba(255,255,255,0.7);
-            line-height: 1.5;
-            font-size: 0.84rem;
-        }
-        .faq-detail-panel {
-            border-radius: 28px;
-            border: 1px solid var(--border);
-            background: rgba(5, 8, 12, 0.88);
-            padding: 26px;
-            min-height: 540px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .faq-detail-header {
-            padding-bottom: 18px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .faq-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            color: var(--p);
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .faq-detail-header h3 {
-            margin: 14px 0 10px;
-            color: #fff;
-            font-size: 2rem;
-        }
-        .faq-detail-header p {
-            margin: 0;
-            color: rgba(255,255,255,0.74);
-            line-height: 1.75;
-            max-width: 760px;
-        }
-        .faq-step-stack {
-            display: grid;
-            gap: 12px;
-        }
-        .faq-step-card {
-            display: grid;
-            grid-template-columns: 56px minmax(0, 1fr);
-            gap: 14px;
-            padding: 16px;
-            border-radius: 22px;
-            border: 1px solid var(--border);
-            background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-            animation: fadeUp 0.35s ease;
-        }
-        .faq-step-num {
-            width: 56px;
-            height: 56px;
-            border-radius: 18px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,242,255,0.12);
-            color: var(--p);
-            font-weight: 900;
-            font-family: 'JetBrains Mono';
-        }
-        .faq-step-card h4 {
-            /* Twoje stare ustawienia */
-            margin: 0 0 6px;
-            color: #fff;
-            font-size: 1.05rem;
-
-            /* Nowe poprawki na brak spacji */
-            letter-spacing: normal !important; 
-            word-spacing: 2px;
-            display: inline-block;
-            width: 100%;
-        }
-        .faq-step-card p {
-            margin: 0;
-            color: rgba(255,255,255,0.72);
-            line-height: 1.7;
-        }
-        .faq-step-media {
-            margin-top: 14px;
-            display: grid;
-            grid-template-columns: 180px minmax(0, 1fr);
-            gap: 14px;
-            align-items: center;
-        }
-        .faq-step-thumb {
-            min-height: 150px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            background: linear-gradient(180deg, rgba(0,242,255,0.12), rgba(112,0,255,0.12));
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 8px;
-        }
-        .faq-step-thumb-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 16px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.04);
-            color: var(--p);
-            font-size: 1.1rem;
-        }
-        .faq-step-thumb strong {
-            color: #fff;
-            font-size: 0.98rem;
-        }
-        .faq-step-thumb small {
-            color: rgba(255,255,255,0.7);
-            line-height: 1.5;
-            font-size: 0.82rem;
-        }
-        .faq-step-caption p {
-            margin-bottom: 8px;
-        }
-        .faq-step-caption span {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--p);
-            font-size: 0.88rem;
-            font-weight: 800;
-        }
-        .faq-empty {
-            margin-top: 18px;
-            padding: 18px 20px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.02);
-            border: 1px dashed var(--border);
-            color: rgba(255,255,255,0.7);
-            text-align: center;
-            display: none;
-        }
-        .faq-empty.active { display: block; }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         @media (max-width: 900px) {
-            .faq-shell { padding: 24px; }
-            .faq-layout { grid-template-columns: 1fr; }
-            .faq-sidebar { position: static; }
-            .faq-step-media { grid-template-columns: 1fr; }
             .cta-grid { grid-template-columns: 1fr; }
             .server-status-grid { grid-template-columns: 1fr; }
             .nav-container { flex-direction: column; gap: 20px; }
@@ -600,28 +326,6 @@
         }
         .mod-link:hover { opacity: 1; letter-spacing: 1px; }
 
-        /* ROADMAP */
-        .roadmap-container { position: relative; border-left: 2px solid var(--border); padding-left: 50px; margin-left: 50px; }
-        .roadmap-item { margin-bottom: 60px; position: relative; }
-        .roadmap-item::before {
-            content: ''; position: absolute; left: -61px; top: 0; width: 20px; height: 20px;
-            background: var(--bg); border: 4px solid var(--p); border-radius: 50%;
-        }
-        .roadmap-date { color: var(--p); font-family: 'JetBrains Mono'; font-weight: 800; }
-        .roadmap-content h3 { font-size: 1.8rem; margin: 10px 0; }
-
-        /* STORE SECTION */
-        .store-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .package {
-            background: var(--card); border-radius: 50px; padding: 60px 40px; text-align: center;
-            border: 1px solid var(--border); position: relative;
-        }
-        .package.elite { border-color: var(--s); background: linear-gradient(180deg, rgba(112,0,255,0.05) 0%, transparent 100%); }
-        .p-price { font-size: 4rem; font-weight: 900; margin: 20px 0; display: block; }
-        .p-features { list-style: none; margin: 30px 0; text-align: left; }
-        .p-features li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; gap: 10px; }
-        .p-features i { color: var(--p); }
-
         footer { padding: 100px 0; border-top: 1px solid var(--border); background: #010203; text-align: center; }
         .footer-logo { font-size: 2.5rem; font-weight: 900; margin-bottom: 40px; display: block; text-decoration: none; color: #fff; }
         .social-big { display: flex; justify-content: center; gap: 30px; margin-bottom: 60px; }
@@ -641,7 +345,6 @@
         }
         @media (max-width: 900px) {
             .features-mega-grid { grid-template-columns: repeat(2, 1fr); }
-            .store-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 5rem; }
         }
         @media (max-width: 600px) {
@@ -660,7 +363,6 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#about">Technologia</a></li>
-                <li><a href="#faq">FAQ</a></li>
             </ul>
             <div class="nav-actions">
                 <a class="btn-small" href="https://discord.gg/UJG4VCMy83" target="_blank" rel="noreferrer">ZALOGUJ</a>
@@ -687,329 +389,39 @@
             <h2>Arsenał Technologii</h2>
             <p style="color: rgba(255,255,255,0.5); max-width: 800px; margin: 20px auto;">Kompletna lista modyfikacji napędzających nasz świat.</p>
         </div>
-        
-        <div class="features-mega-grid">
-            
-            <div class="f-card reveal">
-                <i class="fa-solid fa-plane-up"></i>
-                <h3>Create Aeronautics</h3>
-                <p>Przełomowa fizyka lotu. Buduj własne statki i samoloty.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-aeronautics" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+
+        <div style="margin-bottom: 50px; display: flex; justify-content: center;">
+            <input type="text" id="mod-search" placeholder="🔍 Wyszukaj mod..." style="
+                width: 100%;
+                max-width: 500px;
+                padding: 16px 22px;
+                border-radius: 999px;
+                border: 1px solid rgba(0, 242, 255, 0.3);
+                background: rgba(255, 255, 255, 0.04);
+                color: #fff;
+                font-size: 1rem;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                outline: none;
+                transition: all 0.3s ease;
+            " />
+        </div>
+        <div id="search-results" style="
+            text-align: center;
+            color: rgba(0, 242, 255, 0.8);
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        ">Wyświetlanie 41 modów</div>
+
+        <div class="features-mega-grid" id="mods-grid">
+
             </div>
 
-            <div class="f-card reveal">
-                <i class="fa-solid fa-water"></i>
-                <h3>Create Deep Seas</h3>
-                <p>Eksploracja dna oceanów i modularne łodzie podwodne.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-deep-seas" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-gears"></i>
-                <h3>Create</h3>
-                <p>Podstawa techniczna serwera. Mechanika rotacji i kół zębatych.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <h3>Jade 🔍</h3>
-                <p>Zaawansowany interfejs informacyjny o blokach i bytach.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/jade" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-bolt-lightning"></i>
-                <h3>Sable</h3>
-                <p>Silnik optymalizacji renderowania dla najwyższej płynności.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/sable" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-microphone"></i>
-                <h3>Simple Voice Chat</h3>
-                <p>Komunikacja głosowa zbliżeniowa bezpośrednio w grze.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-map"></i>
-                <h3>Xaero's Minimap</h3>
-                <p>Lekka i precyzyjna minimapa z radarem graczy.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-apple-whole"></i>
-                <h3>AppleSkin</h3>
-                <p>Wizualizacja nasycenia głodu i regeneracji zdrowia.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/appleskin" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-eye"></i>
-                <h3>Iris Shaders</h3>
-                <p>Obsługa shaderów z niesamowitą wydajnością.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/irisshaders" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-box-archive"></i>
-                <h3>Sophisticated Core</h3>
-                <p>Biblioteka dla zaawansowanych systemów przechowywania.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/sophisticated-core" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-backpack"></i>
-                <h3>Sophisticated Backpacks</h3>
-                <p>Modularne plecaki z ulepszeniami i automatyzacją.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>CBC Military Supplement</h3>
-                <p>Pancerze i osłony dla maszyn bojowych z armatami.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/cbc-military-supplement" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-user-tag"></i>
-                <h3>Chat Heads</h3>
-                <p>Ikony skina obok wiadomości na czacie globalnym.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/chat-heads" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-cubes"></i>
-                <h3>CraterLib</h3>
-                <p>Podstawowa biblioteka techniczna dla modyfikacji.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/craterlib" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-burst"></i>
-                <h3>Create Big Cannons</h3>
-                <p>Budowa potężnej artylerii i pocisków kinetycznych.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-big-cannons" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-plug"></i>
-                <h3>Create Crafts & Additions</h3>
-                <p>Integracja energii elektrycznej z napędami Create.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-crafts-additions" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-chair"></i>
-                <h3>Create Deco</h3>
-                <p>Setki nowych bloków dekoracyjnych w stylu industrialnym.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-deco" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-shuttle-space"></i>
-                <h3>Create Jetpack</h3>
-                <p>Loty osobiste napędzane sprężonym powietrzem.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-jetpack" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-bore-hole"></i>
-                <h3>Create Ore Excavation</h3>
-                <p>Wiertła do wydobywania surowców z nieskończonych żył.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-ore-excavation" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-utensils"></i>
-                <h3>Create Slice & Dice</h3>
-                <p>Automatyzacja przygotowywania posiłków i krojona.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-slice-and-dice" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-toolbox"></i>
-                <h3>Create Stuff 'N Additions</h3>
-                <p>Nowe narzędzia, pancerze i mechanizmy pomocnicze.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-stuff-additions" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-kitchen-set"></i>
-                <h3>Create: Central Kitchen</h3>
-                <p>Integracja kulinarna Create z Farmer's Delight.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-central-kitchen" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-clone"></i>
-                <h3>Create: Copycats+</h3>
-                <p>Ulepszone bloki kopiujące tekstury innych bloków.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-copycats" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-industry"></i>
-                <h3>Create: Diesel Generators</h3>
-                <p>Silniki spalinowe na paliwa płynne i destylacja.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-diesel-generators" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-dragon"></i>
-                <h3>Create: Dragons Plus</h3>
-                <p>Integracja smoków i mitycznych stworzeń z technologią.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-dragons-plus" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-wand-sparkles"></i>
-                <h3>Create: Enchantment Industry</h3>
-                <p>Automatyzacja zaklinania przedmiotów i płynne XP.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-enchantment-industry" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-fish"></i>
-                <h3>Fishing Bobber Detector</h3>
-                <p>Automatyczne łowienie ryb dzięki systemom Create.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-fishing-bobber-detector" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-wheat-awn"></i>
-                <h3>Create: Integrated Farming</h3>
-                <p>Zintegrowane systemy zaawansowanego rolnictwa.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-integrated-farming" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-coins"></i>
-                <h3>Create: Numismatics</h3>
-                <p>Kompletny system walutowy i fizyczne monety.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-numismatics" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-shop"></i>
-                <h3>Create: Trading Floor</h3>
-                <p>Giełda towarowa i zaawansowany handel z maszynami.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/create-trading-floor" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-leaf"></i>
-                <h3>Farmer's Delight</h3>
-                <p>Najlepszy mod kulinarny z nowymi uprawami i potrawami.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-dragon"></i>
-                <h3>GeckoLib</h3>
-                <p>Silnik animacji dla skomplikowanych modeli 3D.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/geckolib" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-map-location-dot"></i>
-                <h3>JourneyMap</h3>
-                <p>Najbardziej rozbudowana mapa świata i nawigacja.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/journeymap" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-microchip"></i>
-                <h3>Lithium</h3>
-                <p>Kluczowa optymalizacja silnika gry pod NeoForge.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/lithium" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-mouse-pointer"></i>
-                <h3>Mouse Tweaks</h3>
-                <p>Ulepszenia zarządzania ekwipunkiem i sortowania.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/mouse-tweaks" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-person-running"></i>
-                <h3>Not Enough Animations</h3>
-                <p>Płynne animacje jedzenia, picia i korzystania z map.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/not-enough-animations" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-
-            <div class="f-card reveal">
-                <i class="fa-solid fa-user"></i>
-                <h3>Skin Layers 3D</h3>
-                <p>Trójwymiarowe warstwy skinów dla wszystkich graczy.</p>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
-            </div>
-            </div>
+    </section></div>
 
     </section>
 
-    <section id="faq">
-        <div class="grid-header reveal">
-            <span style="color: var(--p); font-weight: 800; letter-spacing: 5px;">KNOWLEDGE CORE</span>
-            <h2>FAQ</h2>
-            <p style="color: rgba(255,255,255,0.5); max-width: 860px; margin: 20px auto;">Najpierw krótka odpowiedź, a następnie pełny poradnik dla tego samego tematu. Kliknij wybrany temat po lewej stronie, aby przejść bezpośrednio do odpowiedniej treści.</p>
-        </div>
-
-        <div class="faq-shell reveal">
-            <div class="faq-toolbar">
-                <input id="faq-search" class="faq-search" type="text" placeholder="Wyszukaj pytanie, temat lub frazę..." autocomplete="off">
-                <div class="faq-badge"><i class="fa-solid fa-bolt"></i> <span>Pytania: <strong id="faq-count">5</strong></span></div>
-            </div>
-
-            <div class="faq-layout">
-                <aside class="faq-sidebar">
-                    <div class="faq-sidebar-top">
-                        <p>Wybierz temat</p>
-                        <span id="faq-selected-label">Wybrany temat</span>
-                    </div>
-                    <div class="faq-topic-list" id="faq-topic-list">
-                        <button type="button" class="faq-topic-button active" data-topic="jak-pobrac-mody">
-                            <span>Jak pobrać mody?</span>
-                            <small>Instalacja paczki i konfiguracja launchera</small>
-                        </button>
-                        <button type="button" class="faq-topic-button" data-topic="jak-zrobic-sklep">
-                            <span>Jak zrobić sklep?</span>
-                            <small>Plan działania i bezpieczne uruchomienie</small>
-                        </button>
-                        <button type="button" class="faq-topic-button" data-topic="co-zrobic-gdy-cos-nie-dziala">
-                            <span>Co zrobić, gdy coś nie działa?</span>
-                            <small>Sprawdzenie wersji, logów, zrzutów ekranu i zgłoszenie</small>
-                        </button>
-                        <button type="button" class="faq-topic-button" data-topic="jak-wejsc-w-rytm">
-                            <span>Jak wejść w rytm pracy?</span>
-                            <small>Plan pracy i pierwszy krok realizacji</small>
-                        </button>
-                        <button type="button" class="faq-topic-button" data-topic="kiedy-uzywac-discorda">
-                            <span>Kiedy używać Discorda zamiast czatu?</span>
-                            <small>Kiedy korzystać z Discorda, a kiedy sprawdzić informacje w innym miejscu</small>
-                        </button>
-                    </div>
-                </aside>
-
-                <div class="faq-detail-panel">
-                    <div class="faq-detail-header">
-                        <span class="faq-kicker">Podstrona tutorialowa</span>
-                        <h3 id="faq-detail-title">Jak oddać działkę?</h3>
-                        <p id="faq-detail-summary">Najpierw upewnij się, że działka naprawdę należy do Ciebie. Jeśli zamierzasz ją zwolnić, zgłoś to w Discordzie z lokalizacją i krótkim opisem, aby administrator mógł potwierdzić stan.</p>
-                    </div>
-
-                    <div id="faq-detail-steps" class="faq-step-stack"></div>
-                </div>
-            </div>
-
-            <div class="faq-empty" id="faq-empty">Nie znaleziono wyników dla podanego zapytania. Sprawdź pisownię lub wybierz inny temat.</div>
-        </div>
-
-
+    <section>
         <div class="server-status-section reveal">
             <div class="grid-header" style="text-align: left; margin-bottom: 28px;">
                 <span style="color: var(--p); font-weight: 800; letter-spacing: 5px;">STATUS SERWERA</span>
@@ -1133,15 +545,6 @@
             });
         }
 
-        const faqSearch = document.getElementById('faq-search');
-        const faqEmpty = document.getElementById('faq-empty');
-        const faqCount = document.getElementById('faq-count');
-        const faqTopicList = document.getElementById('faq-topic-list');
-        const faqSelectedLabel = document.getElementById('faq-selected-label');
-        const faqDetailTitle = document.getElementById('faq-detail-title');
-        const faqDetailSummary = document.getElementById('faq-detail-summary');
-        const faqDetailSteps = document.getElementById('faq-detail-steps');
-
         const serverStatusNodes = {
             online: document.getElementById('server-status-online'),
             players: document.getElementById('server-status-players'),
@@ -1214,159 +617,6 @@
         loadServerStatus();
         setInterval(loadServerStatus, 30000);
 
-        const faqTopics = {
-'jak-pobrac-mody': {
-                title: 'Jak pobrać mody?',
-                summary: 'Nasz serwer korzysta z systemu importu CurseForge. To najszybsza metoda, która automatycznie zainstaluje wszystkie potrzebne mody i silnik NeoForge.',
-                tagline: 'Instalacja przez launcher CurseForge (kod importu)',
-                steps: [
-                    { 
-                        title: 'Pobierz i zainstaluj CurseForge', 
-                        body: 'Pobierz oficjalny launcher ze strony curseforge.com. Zainstaluj go i zaloguj się na swoje konto Minecraft.', 
-                        icon: 'fa-download', 
-                        visualTitle: 'Krok 1: Instalacja', 
-                        visualHint: 'Strona: curseforge.com', 
-                        visualText: 'Upewnij się, że wybierasz wersję odpowiednią dla swojego systemu operacyjnego.', 
-                        visualNote: 'Launcher jest bezpieczny i używany przez miliony graczy.' 
-                    },
-                    { 
-                        title: 'Wybierz Minecraft i opcję Import', 
-                        body: 'W aplikacji CurseForge wybierz grę Minecraft z listy, przejdź do zakładki "My Modpacks", a następnie kliknij przycisk "Import" w górnym menu.', 
-                        icon: 'fa-file-import', 
-                        visualTitle: 'Krok 2: Sekcja modyfikacji', 
-                        visualHint: 'Zakładka: My Modpacks -> Import', 
-                        visualText: 'To pozwoli Ci dodać naszą paczkę bez ręcznego przenoszenia plików do folderów.', 
-                        visualNote: 'Wszystko stanie się automatycznie.' 
-                    },
-                    { 
-                        title: 'Użyj kodu do importu paczki', 
-                        body: 'Wybierz opcję importu za pomocą kodu i wklej nasz unikalny kod: 8z4UloPb. Zatwierdź i poczekaj, aż paczka się pobierze.', 
-                        icon: 'fa-key',
-                        visualTitle: 'Krok 3: Wpisz kod', 
-                        visualHint: 'Kod: 8z4UloPb', 
-                        visualText: 'Po zakończeniu pobierania wystarczy kliknąć przycisk "Play" przy nowej paczce.', 
-                        visualNote: 'Jeśli kod nie działa, sprawdź czy nie skopiowałeś dodatkowej spacji.' 
-                    }
-                ]
-            },
-            'jak-zrobic-sklep': {
-                title: 'Jak zrobić sklep?',
-                summary: 'Sklep warto zakładać dopiero wtedy, gdy masz konkretny plan: co sprzedajesz, jaka ma być rola tej przestrzeni i czy nie koliduje z innymi projektami.',
-                tagline: 'Plan działania i bezpieczne uruchomienie',
-                steps: [
-                    { title: 'Zdefiniuj cel sklepu', body: 'Określ, co będzie sprzedawane, dla kogo i jak ma wyglądać rozgrywka.', icon: 'fa-bullseye', visualTitle: 'Screenshot: koncepcja sklepu', visualHint: 'Miejsce na szkic lub opis oferty', visualText: 'Opisz, co gracz ma otrzymać w pierwszym kroku oraz jak sklep ma wspierać społeczność.', visualNote: 'Dobrze mieć przynajmniej jeden konkretny cel na start.' },
-                    { title: 'Uzgodnij to z zespołem', body: 'Sprawdź, czy nie ma już podobnego projektu lub konfliktu z istniejącymi ofertami.', icon: 'fa-users-line', visualTitle: 'Screenshot: rozmowa zespołowa', visualHint: 'Przykład krótkiej konsultacji przed uruchomieniem', visualText: 'Wspólne ustalenie zakresu sprawi, że sklep będzie spójny i łatwy do utrzymania.', visualNote: 'Warto od razu przypisać odpowiedzialności i kontakt do moderacji.' },
-                    { title: 'Uruchom i opisz działanie', body: 'Stwórz prostą strukturę, komunikat i miejsce na pierwszy kontakt z graczami.', icon: 'fa-store', visualTitle: 'Screenshot: pierwszy wpis sklepu', visualHint: 'Miejsce na przykład etykiety i opisu', visualText: 'Dodaj krótki opis, podstawowe informacje i wiadomość, która wyjaśnia, co gracz może zrobić dalej.', visualNote: 'Pierwsze wrażenie jest ważne — nie zostawiaj niejasności.' }
-                ]
-            },
-            'co-zrobic-gdy-cos-nie-dziala': {
-                title: 'Co zrobić, gdy coś nie działa?',
-                summary: 'Sprawdź najpierw wersję, status serwera i logi. Jeśli problem się powtarza, wrzuć do Discorda dokładny opis, zrzut ekranu i informację, kiedy problem wystąpił.',
-                tagline: 'Sprawdzenie wersji, logów, zrzutów ekranu i zgłoszenie',
-                steps: [
-                    { title: 'Sprawdź wersję i status serwera', body: 'Upewnij się, czy problem nie wynika z błędnej wersji lub krótkiego przestoju.', icon: 'fa-circle-info', visualTitle: 'Screenshot: ustawienia i status', visualHint: 'Miejsce na zrzut wersji i statusu', visualText: 'Sprawdź, czy klient i serwer są na tej samej wersji oraz czy serwer nie ma aktualnego przestoju.', visualNote: 'To często eliminuje większość problemów przed kontaktem z Discordem.' },
-                    { title: 'Zbierz dane', body: 'Zapisz logi, zrzut ekranu oraz czas, kiedy problem się pojawił.', icon: 'fa-file-lines', visualTitle: 'Screenshot: logi i błąd', visualHint: 'Przykład informacji, które warto dołączyć', visualText: 'Wrzucaj konkretne informacje: błąd, czas, nazwa świata, kroki odtworzenia.', visualNote: 'Najlepsze zgłoszenie zawiera przynajmniej jeden zrzut lub log.' },
-                    { title: 'Zgłoś to w Discordzie', body: 'Im więcej szczegółów, tym szybciej administrator znajdzie przyczynę.', icon: 'fa-bug', visualTitle: 'Screenshot: zgłoszenie problemu', visualHint: 'Miejsce na przykład gotowego opisu', visualText: 'Podaj dokładny opis problemu i wklej link do zrzutu lub logów, aby administrator mógł działać od razu.', visualNote: 'Pamiętaj, że krótkie i konkretne zgłoszenie zwiększa szanse na szybkie rozwiązanie.' }
-                ]
-            },
-            'jak-wejsc-w-rytm': {
-                title: 'Jak wejść w rytm pracy?',
-                summary: 'Najskuteczniejszy start to szybkie zapoznanie się z aktualnym projektem oraz jasny cel na jedną sesję pracy.',
-                tagline: 'Plan pracy i pierwszy krok realizacji',
-                steps: [
-                    { title: 'Dołącz do aktualnego projektu', body: 'Sprawdź, co już jest gotowe i gdzie możesz się od razu przyłączyć.', icon: 'fa-person-walking', visualTitle: 'Screenshot: aktywny projekt', visualHint: 'Miejsce na podgląd aktualnego zadania', visualText: 'Sprawdź, gdzie możesz wnieść realną wartość i jakie zadania są już zaplanowane.', visualNote: 'Dobry start to wejście tam, gdzie jest już podstawowa struktura.' },
-                    { title: 'Ustal jeden cel na sesję', body: 'Nie rozpraszaj się między kilkoma zadaniami naraz.', icon: 'fa-list-check', visualTitle: 'Screenshot: lista celów', visualHint: 'Miejsce na prostą listę zadań', visualText: 'Wybierz jeden konkret, który da się skończyć w trakcie jednej sesji.', visualNote: 'To pomaga utrzymać tempo i widzieć postęp.' },
-                    { title: 'Dokonaj krótkiego podsumowania', body: 'Zapisz, co zostało zrobione i co trzeba dokończyć następnym razem.', icon: 'fa-clipboard-check', visualTitle: 'Screenshot: podsumowanie sesji', visualHint: 'Przykład krótkiego notatnika', visualText: 'Notatka z wynikiem sesji daje jasny punkt startu na kolejny dzień.', visualNote: 'Minimalna forma podsumowania wystarczy, by nic nie zostało w tyle.' }
-                ]
-            },
-            'kiedy-uzywac-discorda': {
-                title: 'Kiedy używać Discorda zamiast czatu?',
-                summary: 'Czaty są dobre do krótkich, ogólnych informacji, natomiast Discord sprawdza się przy planowaniu, decyzjach i rozwiązywaniu problemów na bieżąco.',
-                tagline: 'Kiedy korzystać z Discorda, a kiedy sprawdzić informacje w innym miejscu',
-                steps: [
-                    { title: 'Użyj czatu dla krótkich informacji', body: 'Dobre do ogólnych ogłoszeń i szybkich przypomnień.', icon: 'fa-comment-dots', visualTitle: 'Screenshot: krótkie ogłoszenie', visualHint: 'Miejsce na przykład wiadomości z informacją', visualText: 'Czat sprawdza się do krótkich aktualizacji, które nie wymagają długiej dyskusji.', visualNote: 'Czat to dobre miejsce do krótkich przypomnień i ogólnych informacji.' },
-                    { title: 'Użyj Discorda do decyzji i detali', body: 'Idealne przy technicznych rzeczach, planowaniu i poważniejszych sprawach.', icon: 'fa-headset', visualTitle: 'Screenshot: rozmowa tematyczna', visualHint: 'Miejsce na przykład wątku z danymi', visualText: 'Discord daje miejsce na kontekst, listy, zdjęcia i ogólną koordynację.', visualNote: 'Tam warto przenosić wszystko, co wymaga rozmowy i decyzji.' },
-                    { title: 'Zachowaj jedno miejsce dla informacji', body: 'Najlepiej trzymać wszystkie oficjalne decyzje tam, gdzie są łatwo dostępne.', icon: 'fa-folder-open', visualTitle: 'Screenshot: archiwum wiadomości', visualHint: 'Przykład uporządkowanego tematu', visualText: 'Utrzymywanie jednego miejsca dla informacji ogranicza chaos i pomaga wracać do ważnych decyzji.', visualNote: 'Jeśli coś ma być oficjalne, trzymaj to w przewidywalnym miejscu.' }
-                ]
-            }
-        };
-
-        let activeTopic = 'oddac-dzialke';
-
-        function renderSteps(topic) {
-            faqDetailSteps.innerHTML = topic.steps.map((step, index) => `
-                <article class="faq-step-card">
-                    <span class="faq-step-num">${String(index + 1).padStart(2, '0')}</span>
-                    <div>
-                        <h4>${step.title}</h4>
-                        <p>${step.body}</p>
-                        <div class="faq-step-media">
-                            <div class="faq-step-thumb">
-                                <span class="faq-step-thumb-icon"><i class="fa-solid ${step.icon}"></i></span>
-                                <strong>${step.visualTitle}</strong>
-                                <small>${step.visualHint}</small>
-                            </div>
-                            <div class="faq-step-caption">
-                                <p>${step.visualText}</p>
-                                <span><i class="fa-solid fa-circle-info"></i> ${step.visualNote}</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            `).join('');
-        }
-
-        function renderDetail(topicId) {
-            const topic = faqTopics[topicId];
-            if (!topic) return;
-            activeTopic = topicId;
-            faqSelectedLabel.textContent = topic.title;
-            faqDetailTitle.textContent = topic.title;
-            faqDetailSummary.textContent = topic.summary;
-            renderSteps(topic);
-            document.querySelectorAll('.faq-topic-button').forEach((button) => {
-                button.classList.toggle('active', button.dataset.topic === topicId);
-            });
-        }
-
-        function filterTopics() {
-            const term = faqSearch.value.trim().toLowerCase();
-            const filteredIds = Object.keys(faqTopics).filter((id) => {
-                const topic = faqTopics[id];
-                const haystack = `${topic.title} ${topic.summary} ${topic.tagline} ${topic.steps.map((step) => `${step.title} ${step.body}`).join(' ')}`.toLowerCase();
-                return term === '' || haystack.includes(term);
-            });
-
-            const buttons = Array.from(document.querySelectorAll('.faq-topic-button'));
-            buttons.forEach((button) => {
-                const shouldShow = filteredIds.includes(button.dataset.topic);
-                button.style.display = shouldShow ? 'grid' : 'none';
-            });
-
-            faqCount.textContent = filteredIds.length;
-            faqEmpty.classList.toggle('active', filteredIds.length === 0);
-
-            if (filteredIds.length === 0) {
-                faqSelectedLabel.textContent = 'Brak wyników';
-                return;
-            }
-
-            if (!filteredIds.includes(activeTopic)) {
-                activeTopic = filteredIds[0];
-            }
-
-            renderDetail(activeTopic);
-        }
-
-        faqTopicList.querySelectorAll('.faq-topic-button').forEach((button) => {
-            button.addEventListener('click', () => {
-                renderDetail(button.dataset.topic);
-            });
-        });
-
-        faqSearch.addEventListener('input', filterTopics);
-        filterTopics();
-
         // SCROLL REVEAL ENGINE
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1381,6 +631,92 @@
         document.querySelectorAll('.reveal').forEach(el => {
             revealObserver.observe(el);
         });
+
+        // MODY DATABASE
+        const modsData = [
+            { name: "Create Aeronautics", desc: "Przełomowa fizyka lotu. Buduj własne statki i samoloty.", icon: "fa-plane-up", link: "https://www.curseforge.com/minecraft/mc-mods/create-aeronautics" },
+            { name: "Architectury API", desc: "Uniwersalne API dla kompatybilności między silnikami modów.", icon: "fa-puzzle-piece", link: "https://www.curseforge.com/minecraft/mc-mods/architectury-api" },
+            { name: "Better Tablist", desc: "Ulepszona lista graczy z dodatkowymi informacjami.", icon: "fa-list", link: "https://www.curseforge.com/minecraft/mc-mods/better-tablist" },
+            { name: "CBC Military Supplement", desc: "Pancerze i osłony dla maszyn bojowych z armatami.", icon: "fa-shield-halved", link: "https://www.curseforge.com/minecraft/mc-mods/cbc-military-supplement" },
+            { name: "Clumps", desc: "Optymalizacja iskier doświadczenia.", icon: "fa-arrows-to-dot", link: "https://www.curseforge.com/minecraft/mc-mods/clumps" },
+            { name: "CraterLib", desc: "Podstawowa biblioteka techniczna dla modyfikacji.", icon: "fa-cubes", link: "https://www.curseforge.com/minecraft/mc-mods/craterlib" },
+            { name: "Create", desc: "Podstawa techniczna serwera. Mechanika rotacji i kół zębatych.", icon: "fa-gears", link: "https://www.curseforge.com/minecraft/mc-mods/create" },
+            { name: "Create Big Cannons", desc: "Budowa potężnej artylerii i pocisków kinetycznych.", icon: "fa-burst", link: "https://www.curseforge.com/minecraft/mc-mods/create-big-cannons" },
+            { name: "Create Crafts & Additions", desc: "Integracja energii elektrycznej z napędami Create.", icon: "fa-plug", link: "https://www.curseforge.com/minecraft/mc-mods/create-crafts-additions" },
+            { name: "Create Deep Seas", desc: "Eksploracja dna oceanów i modularne łodzie podwodne.", icon: "fa-water", link: "https://www.curseforge.com/minecraft/mc-mods/create-deep-seas" },
+            { name: "Create Jetpack", desc: "Loty osobiste napędzane sprężonym powietrzem.", icon: "fa-shuttle-space", link: "https://www.curseforge.com/minecraft/mc-mods/create-jetpack" },
+            { name: "Create Ore Excavation", desc: "Wiertła do wydobywania surowców z nieskończonych żył.", icon: "fa-bore-hole", link: "https://www.curseforge.com/minecraft/mc-mods/create-ore-excavation" },
+            { name: "Create Stuff 'N Additions", desc: "Nowe narzędzia, pancerze i mechanizmy pomocnicze.", icon: "fa-toolbox", link: "https://www.curseforge.com/minecraft/mc-mods/create-stuff-additions" },
+            { name: "Create: Copycats+", desc: "Ulepszone bloki kopiujące tekstury innych bloków.", icon: "fa-clone", link: "https://www.curseforge.com/minecraft/mc-mods/create-copycats" },
+            { name: "Create: Diesel Generators", desc: "Silniki spalinowe na paliwa płynne i destylacja.", icon: "fa-industry", link: "https://www.curseforge.com/minecraft/mc-mods/create-diesel-generators" },
+            { name: "Create: Dragons Plus", desc: "Integracja smoków i mitycznych stworzeń z technologią.", icon: "fa-dragon", link: "https://www.curseforge.com/minecraft/mc-mods/create-dragons-plus" },
+            { name: "Create: Enchantment Industry", desc: "Automatyzacja zaklinania przedmiotów i płynne XP.", icon: "fa-wand-sparkles", link: "https://www.curseforge.com/minecraft/mc-mods/create-enchantment-industry" },
+            { name: "Create: Fishing Bobber Detector", desc: "Automatyczne łowienie ryb dzięki systemom Create.", icon: "fa-fish", link: "https://www.curseforge.com/minecraft/mc-mods/create-fishing-bobber-detector" },
+            { name: "Create: Integrated Farming", desc: "Zintegrowane systemy zaawansowanego rolnictwa.", icon: "fa-wheat-awn", link: "https://www.curseforge.com/minecraft/mc-mods/create-integrated-farming" },
+            { name: "Create: Numismatics", desc: "Kompletny system walutowy i fizyczne monety.", icon: "fa-coins", link: "https://www.curseforge.com/minecraft/mc-mods/create-numismatics" },
+            { name: "Create: Trading Floor", desc: "Giełda towarowa i zaawansowany handel z maszynami.", icon: "fa-shop", link: "https://www.curseforge.com/minecraft/mc-mods/create-trading-floor" },
+            { name: "Easy NPC", desc: "Tworzenie i edycja NPC z zaawansowanymi opcjami.", icon: "fa-face-grin-hearts", link: "https://www.curseforge.com/minecraft/mc-mods/easy-npc" },
+            { name: "Farmer's Delight", desc: "Najlepszy mod kulinarny z nowymi uprawami i potrawami.", icon: "fa-leaf", link: "https://www.curseforge.com/minecraft/mc-mods/farmers-delight" },
+            { name: "Flan", desc: "System ochrony terytoriów dla członków zespołu.", icon: "fa-flag", link: "https://www.curseforge.com/minecraft/mc-mods/flan" },
+            { name: "FTB Library", desc: "Biblioteka bazowa dla modów FTB.", icon: "fa-book-open", link: "https://www.curseforge.com/minecraft/mc-mods/ftb-library-neoforge" },
+            { name: "FTB Quests", desc: "System questów i celów dla graczy.", icon: "fa-envelope", link: "https://www.curseforge.com/minecraft/mc-mods/ftb-quests-neoforge" },
+            { name: "FTB Teams", desc: "System drużyn i współpracy między graczami.", icon: "fa-users", link: "https://www.curseforge.com/minecraft/mc-mods/ftb-teams-neoforge" },
+            { name: "GeckoLib", desc: "Silnik animacji dla skomplikowanych modeli 3D.", icon: "fa-dragon", link: "https://www.curseforge.com/minecraft/mc-mods/geckolib" },
+            { name: "Gobber", desc: "Nowy materiał i narzędzia dla zaawansowanego wydobytku.", icon: "fa-cube", link: "https://www.curseforge.com/minecraft/mc-mods/gobber" },
+            { name: "JourneyMap", desc: "Najbardziej rozbudowana mapa świata i nawigacja.", icon: "fa-map-location-dot", link: "https://www.curseforge.com/minecraft/mc-mods/journeymap" },
+            { name: "Just Enough Items (JEI)", desc: "Interfejs przeglądania przepisów i składników do craftowania.", icon: "fa-box", link: "https://www.curseforge.com/minecraft/mc-mods/jei" },
+            { name: "Kotlin for Forge", desc: "Biblioteka wspierająca język Kotlin w modach.", icon: "fa-terminal", link: "https://www.curseforge.com/minecraft/mc-mods/kotlin-for-forge" },
+            { name: "Lithium", desc: "Kluczowa optymalizacja silnika gry pod NeoForge.", icon: "fa-microchip", link: "https://www.curseforge.com/minecraft/mc-mods/lithium" },
+            { name: "Lootr", desc: "Spersonalizowane generowanie loot z kontenerów dla każdego gracza.", icon: "fa-treasure-chest", link: "https://www.curseforge.com/minecraft/mc-mods/lootr" },
+            { name: "MCServerHost", desc: "Narzędzia do zarządzania serwerem.", icon: "fa-server", link: "https://www.curseforge.com/minecraft/mc-mods/mcserverhost" },
+            { name: "MiniMOTD", desc: "Kustomizacja wiadomości serwera (MOTD).", icon: "fa-broadcast-tower", link: "https://www.curseforge.com/minecraft/mc-mods/minimotd" },
+            { name: "Moonlight Lib", desc: "Uniwersalna biblioteka dla wielu modów.", icon: "fa-sparkles", link: "https://www.curseforge.com/minecraft/mc-mods/moonlight" },
+            { name: "Naturalist", desc: "Nowe zwierzęta i rośliny do eksploracji świata.", icon: "fa-leaf", link: "https://www.curseforge.com/minecraft/mc-mods/naturalist" },
+            { name: "Ritchie's Projectile Library", desc: "Biblioteka dla zaawansowanych systemów pocisków.", icon: "fa-book", link: "https://www.curseforge.com/minecraft/mc-mods/ritchies-projectile-library" },
+            { name: "Sable", desc: "Silnik optymalizacji renderowania dla najwyższej płynności.", icon: "fa-bolt-lightning", link: "https://www.curseforge.com/minecraft/mc-mods/sable" },
+            { name: "Simple Discord Link", desc: "Integracja Discord z systemem czatu serwera.", icon: "fa-message", link: "https://www.curseforge.com/minecraft/mc-mods/simple-discord-link" },
+            { name: "Simple Voice Chat", desc: "Komunikacja głosowa zbliżeniowa bezpośrednio w grze.", icon: "fa-microphone", link: "https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat" },
+            { name: "Sophisticated Core", desc: "Biblioteka dla zaawansowanych systemów przechowywania.", icon: "fa-box-archive", link: "https://www.curseforge.com/minecraft/mc-mods/sophisticated-core" },
+            { name: "Sophisticated Backpacks", desc: "Modularne plecaki z ulepszeniami i automatyzacją.", icon: "fa-backpack", link: "https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks" },
+            { name: "Sophisticated Storage", desc: "Zaawansowane systemy przechowywania i organizacji przedmiotów.", icon: "fa-cube", link: "https://www.curseforge.com/minecraft/mc-mods/sophisticated-storage" },
+            { name: "Supplementaries", desc: "Rozmaitości dekoracyjne i funkcjonalne do świata gry.", icon: "fa-hat-wizard", link: "https://www.curseforge.com/minecraft/mc-mods/supplementaries" }
+        ];
+
+        // RENDER MODS
+        function renderMods(modsToShow = modsData) {
+            const grid = document.getElementById('mods-grid');
+            const resultsText = document.getElementById('search-results');
+            
+            grid.innerHTML = modsToShow.map(mod => `
+                <div class="f-card reveal">
+                    <i class="fa-solid ${mod.icon}"></i>
+                    <h3>${mod.name}</h3>
+                    <p>${mod.desc}</p>
+                    <a href="${mod.link}" class="mod-link" target="_blank">CURSEFORGE <i class="fa-solid fa-link"></i></a>
+                </div>
+            `).join('');
+
+            resultsText.textContent = `Wyświetlanie ${modsToShow.length} modów`;
+            
+            // Re-observe new elements
+            document.querySelectorAll('.f-card').forEach(el => {
+                revealObserver.observe(el);
+            });
+        }
+
+        // SEARCH FUNCTION
+        const searchInput = document.getElementById('mod-search');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = modsData.filter(mod => 
+                mod.name.toLowerCase().includes(query) || 
+                mod.desc.toLowerCase().includes(query)
+            );
+            renderMods(filtered);
+        });
+
+        // Initial render
+        renderMods();
     </script>
 </body>
 </html>
